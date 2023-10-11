@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+}
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 1%;
+    height: 3vh;
+    align-items: center;
+    width: 99%;
+    position: fixed;
+    top: 0;
+    background-color: white;
+}
+#logo{
+    display: flex;
+    align-items: center;
+}
+#company-name{
+    margin-left: 0.5vw;
+    color: #3A8A4D;
+    font-size: 2rem;
+    font-family: 'Carattere', cursive;
+    padding-top: 1vh;
+}
+#nav-items ul{
+    list-style: none;
+    display: flex;
+}
+#nav-items ul li {
+    margin-right: 2vw;
+}
+.nav-item>a{
+    font-size: 1.4rem;
+    color: #444B71;
+    font-family:  serif
+}
+.nav-item:hover{
+    cursor: pointer;
+}
+.nav-item>a:hover{
+    color: #3A8A4D;
+}

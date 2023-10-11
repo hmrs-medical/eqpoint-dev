@@ -1,0 +1,47 @@
+section{
+    font-family: serif;
+    padding: 1%;
+}
+section:nth-child(2n){
+    background-color: rgb(243, 243, 243);
+}
+.section-heading{
+    font-size: 2rem;
+    text-align: center;
+    font-family: sans-serif;
+    color: #3b436e;
+}
+.subtext{
+    color: rgb(84, 84, 84);
+}
+#intro{
+    display: flex;
+    margin: 10vh auto;
+}
+#intro-collage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1.5vw;
+    height: 75vh;
+    width: 70%;
+    /* background-color: #3A8A4D;; */
+    border-radius: 10px;
+}
+/* #intro-collage>a{
+    height: fit-content;
+    align-self: flex-end;
+}
+#intro-collage>a>div{
+    border-radius: 5px;
+    padding: 2%;
+    margin: 5%;
+    min-width: 7.5vw;
+    background-color: white ;
+} */
+#intro-about{
+    align-self: center;
+    width: 30%;
+    font-size: 1.5rem;
+    text-align: center;
+}
