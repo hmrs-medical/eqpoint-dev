@@ -1,32 +1,34 @@
-section{
-    font-family: serif;
-    padding: 1%;
+section {
+  font-family: serif;
+  padding: 1%;
 }
-section:nth-child(2n){
-    background-color: rgb(243, 243, 243);
+section:nth-child(2n) {
+  background-color: rgb(243, 243, 243);
 }
-.section-heading{
-    font-size: 2rem;
-    text-align: center;
-    font-family: sans-serif;
-    color: #3b436e;
+.section-heading {
+  font-size: 2rem;
+  text-align: center;
+  font-family: sans-serif;
+  color: #3b436e;
 }
-.subtext{
-    color: rgb(84, 84, 84);
+.subtext {
+  color: rgb(84, 84, 84);
 }
-#intro{
-    display: flex;
-    margin: 10vh auto;
+#intro > div {
+  display: flex;
 }
-#intro-collage{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 1.5vw;
-    height: 75vh;
-    width: 70%;
-    /* background-color: #3A8A4D;; */
-    border-radius: 10px;
+#intro {
+  margin-top: 10vh auto;
+}
+#intro-collage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-right: 1.5vw; */
+  height: 50vh;
+  width: 50%;
+  /* background-color: #3A8A4D;; */
+  border-radius: 10px;
 }
 /* #intro-collage>a{
     height: fit-content;
@@ -39,9 +41,10 @@ section:nth-child(2n){
     min-width: 7.5vw;
     background-color: white ;
 } */
-#intro-about{
-    align-self: center;
-    width: 30%;
-    font-size: 1.5rem;
-    text-align: center;
+#intro-about {
+  align-self: center;
+  width: 50%;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 2%;
 }
