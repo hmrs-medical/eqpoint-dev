@@ -10,7 +10,7 @@ function Home() {
             <img
               style={{ borderRadius: "inherit" }}
               src={collage}
-              height="85%"
+              height="100%"
               width="100%"
               alt="medical equipments collage"
             />
@@ -36,7 +36,7 @@ function Home() {
             <img
               style={{ borderRadius: "inherit" }}
               src={collage}
-              height="85%"
+              height="100%"
               width="100%"
               alt="medical equipments collage"
             />

@@ -16,35 +16,47 @@ section:nth-child(2n) {
 }
 #intro > div {
   display: flex;
+  margin-bottom: 1vh;
 }
 #intro {
-  margin-top: 10vh auto;
+  padding-top: 7vh;
 }
 #intro-collage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* margin-right: 1.5vw; */
-  height: 50vh;
+  height: 45vh;
   width: 50%;
-  /* background-color: #3A8A4D;; */
   border-radius: 10px;
+  padding: 0 1%;
 }
-/* #intro-collage>a{
-    height: fit-content;
-    align-self: flex-end;
-}
-#intro-collage>a>div{
-    border-radius: 5px;
-    padding: 2%;
-    margin: 5%;
-    min-width: 7.5vw;
-    background-color: white ;
-} */
 #intro-about {
   align-self: center;
   width: 50%;
   font-size: 1.5rem;
   text-align: center;
-  padding: 2%;
+  padding: 0 1%;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 600px) {
+  #intro {
+    padding-top: 5vh;
+  }
+  #intro > div {
+    justify-content: center;
+    align-items: center;
+  }
+  #first-display {
+    flex-direction: column;
+  }
+  #second-display {
+    flex-direction: column-reverse;
+  }
+  #intro-about,
+  #intro-collage {
+    align-self: unset;
+    width: 90%;
+    height: auto;
+    font-size: 1.2rem;
+    margin-bottom: 1vh;
+  }
 }

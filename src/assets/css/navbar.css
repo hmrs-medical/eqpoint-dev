@@ -40,3 +40,14 @@ body {
 .nav-item > a:hover {
   color: #3a8a4d;
 }
+
+/* Media queries */
+
+@media screen and (max-width: 600px) {
+  .nav-item > a {
+    font-size: 1rem;
+  }
+  #navbar {
+    padding-top: 1%;
+  }
+}
