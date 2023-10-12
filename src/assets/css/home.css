@@ -11,9 +11,19 @@ section:nth-child(2n) {
   font-family: sans-serif;
   color: #3b436e;
 }
+.subheading{
+  font-size: 1.2rem;
+  text-align: center;
+  font-family: sans-serif;
+  color: #3b436e;
+}
 .subtext {
   color: rgb(84, 84, 84);
+  text-align: justify ;
+  width:95%;
+  margin:auto;
 }
+
 #intro > div {
   display: flex;
   margin-bottom: 1vh;

@@ -1,6 +1,7 @@
 // import { Link } from "react-router-dom";
 import "../assets/css/home.css";
 import collage from "../assets/images/medicalEquipments.jpg";
+import Slider from "./slider";
 function Home() {
   return (
     <div className="home">
@@ -47,33 +48,48 @@ function Home() {
       <section id="about">
         <h1 className="section-heading">About us</h1>
         <div id="about-display">
-          <div className="subtext" style={{ textAlign: "justify" }}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.It is a long established
-            fact that a reader will be distracted by the readable content of a
-            page when looking at its layout. The point of using Lorem Ipsum is
-            that it has a more-or-less normal distribution of letters, as
-            opposed to using 'Content here, content here', making it look like
-            readable English. Many desktop publishing packages and web page
-            editors now use Lorem Ipsum as their default model text, and a
-            search for 'lorem ipsum' will uncover many web sites still in their
-            infancy. Various versions have evolved over the years, sometimes by
-            accident, sometimes on purpose (injected humour and the like).
+          <div className="subtext" >
+          Established in March 2005 as a distribution company with an aim of marketing and trading medical 
+          equipments, medical devices and disposables in most efficient manner.
+          Our main focus is to develop professional relations with the customers to understand
+          their need and offer solutions to fullfill those needs. We strive to provide best services with 
+          promt response.
           </div>
+          <h2 className="subheading">Focus Areas</h2>
+          <ul className="subtext" style={{width:'70vw'}}>
+            <li>
+              Transfusion medicine
+            </li>
+            <li>Hematology with special focus on BMT and Thallesemia</li>
+            <li>Diagnostic oncology & research equipments & solutions designing blood bank as per regulatory requirement</li>
+            <li>Stand-alone laboratories & hospital based laboratories</li>
+            <li>Turn key blood bank projects with best quality equipments</li>
+          </ul>
+          <h2 className="subheading">Team</h2>
+          <div className="subtext">
+            A strong back up of team comprising of engineers, sales managers, application specialists, manager logistics and administrative manager
+            headed by management graduates with more than 2 decade of pharma & medical equipment industry experience.
+          </div>
+          <h2 className="subheading">Principal Companies</h2>
+          <ul className="subtext" style={{width:'70vw'}}>
+            <li>
+              TERUMO BCT  
+            </li>
+            <li>THERMO FISCHER SCIENTIFIC</li>
+            <li>OPTICS TECHNOLOGIES Ltd.</li>
+            <li>LISA LINE</li>
+            <li>HEMOCUE</li>
+          </ul>
+
         </div>
       </section>
       <section id="clientel">
         <h1 className="section-heading">
-          Building relationships based on trust{" "}
+          Building relationships based on trust
         </h1>
-        <div id="clientel-display"></div>
+        <div id="clientel-display">
+            <Slider/>
+        </div>
       </section>
     </div>
   );
