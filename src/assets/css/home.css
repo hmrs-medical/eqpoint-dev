@@ -4,6 +4,8 @@ section {
 }
 section:nth-child(2n) {
   background-color: rgb(243, 243, 243);
+  width: 95%;
+  margin: auto;
 }
 .section-heading {
   font-size: 2rem;
@@ -11,7 +13,7 @@ section:nth-child(2n) {
   font-family: sans-serif;
   color: #3b436e;
 }
-.subheading{
+.subheading {
   font-size: 1.2rem;
   text-align: center;
   font-family: sans-serif;
@@ -19,9 +21,9 @@ section:nth-child(2n) {
 }
 .subtext {
   color: rgb(84, 84, 84);
-  text-align: justify ;
-  width:95%;
-  margin:auto;
+  text-align: justify;
+  width: 95%;
+  margin: auto;
 }
 
 #intro > div {
@@ -31,18 +33,23 @@ section:nth-child(2n) {
 #intro {
   padding-top: 7vh;
 }
-#intro-collage {
+.intro-collage {
   height: 45vh;
   width: 50%;
   border-radius: 10px;
   padding: 0 1%;
+  min-height: 250px;
 }
-#intro-about {
+.intro-about {
+  position: relative;
   align-self: center;
   width: 50%;
   font-size: 1.5rem;
   text-align: center;
   padding: 0 1%;
+  animation-name: slide-and-fade;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
 }
 
 /* Media queries */
@@ -52,8 +59,9 @@ section:nth-child(2n) {
     padding-top: 5vh;
   }
   #intro > div {
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    margin-bottom: 2vh;
   }
   #first-display {
     flex-direction: column;
@@ -61,12 +69,31 @@ section:nth-child(2n) {
   #second-display {
     flex-direction: column-reverse;
   }
-  #intro-about,
-  #intro-collage {
-    align-self: unset;
+  .intro-about,
+  .intro-collage {
     width: 90%;
-    height: auto;
+    padding: 0.5%;
     font-size: 1.2rem;
     margin-bottom: 1vh;
+  }
+  .intro-collage {
+    height: 250px;
+  }
+  .intro-about {
+    text-align: unset;
+  }
+}
+
+/* Animations */
+@keyframes slide-and-fade {
+  from {
+    left: -3vw;
+    opacity: 0;
+    font-weight: 100;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+    font-weight: 400;
   }
 }

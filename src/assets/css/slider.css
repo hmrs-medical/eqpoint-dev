@@ -1,8 +1,31 @@
-.slider-display{
-    width: 50%;
-    height: 30vh;
-    /* border: 1px solid rgb(243, 243, 243); */
-    border-radius: 12px;
-    box-shadow: 0 0 4px 1px rgb(197, 197, 197);
-    margin: auto;
+.slider-display {
+  width: 50%;
+  height: 30vh;
+  border-radius: 12px;
+  box-shadow: 0 0 4px 1px rgb(197, 197, 197);
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+.slider-container {
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-position-x: center;
+  background-repeat: no-repeat;
+}
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  font-weight: 900;
+  color: black;
+  cursor: pointer;
+}
+.left-arrow {
+  left: 0.5vw;
+}
+.right-arrow {
+  right: 0.5vw;
 }
