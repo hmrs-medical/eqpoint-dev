@@ -1,12 +1,12 @@
 section {
   font-family: serif;
-  margin: 1% auto;
 }
 section:nth-child(2n) {
   background-color: rgb(243, 243, 243);
   width: 95%;
   margin: auto;
   padding: 0.5%;
+  margin: 1% auto;
 }
 .section-heading {
   font-size: 2rem;
@@ -28,6 +28,7 @@ section:nth-child(2n) {
 }
 #intro {
   padding-top: 7vh;
+  padding-bottom: 1%;
 }
 .intro-about {
   width: 80%;
