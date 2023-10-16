@@ -3,13 +3,16 @@ import "../assets/css/slider.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { sliderData } from "./config_flies/slider_config";
+import { sliderStyles } from "./config_flies/slider_config";
+
 function Slider(props) {
-  const [index, setIndex] = useState(1);
-  const numSlides = props.numSlides;
+  const [index, setIndex] = useState(0);
+  const numSlides = sliderData.length;
   useEffect(() => {
     const interval = setInterval(() => {
-      const isLast = index === numSlides;
-      setIndex(isLast ? 1 : index + 1);
+      const isLast = index === numSlides-1;
+      setIndex(isLast ? 0 : index + 1);
     }, 6000);
     return () => {
       clearInterval(interval);
@@ -17,18 +20,21 @@ function Slider(props) {
   }, [index, numSlides]);
 
   const next = () => {
-    const isLast = index === numSlides;
-    setIndex(isLast ? 1 : index + 1);
+    const isLast = index === numSlides-1;
+    setIndex(isLast ? 0 : index + 1);
   };
   const prev = () => {
-    const isLast = index === 1;
-    setIndex(isLast ? numSlides - 1 : index - 1);
+    const isFirst = index === 0;
+    setIndex(isFirst ? numSlides - 1 : index - 1);
   };
-
+  const headingStyle = sliderStyles.headingStyle;
+  const contentStyle = sliderStyles.contentStyle;
+  const buttonStyle = sliderStyles.buttonStyle;
   return (
+    
     <div
       className="slider-display"
-      style={{ height: props.height, width: props.width }}
+      style={{ height: props.height, width: props.width ,backgroundColor: props.backgroundColor }}
     >
       <div className="left-arrow arrow">
         <FontAwesomeIcon icon={faChevronLeft} onClick={prev} />
@@ -36,12 +42,16 @@ function Slider(props) {
       <div className="right-arrow arrow">
         <FontAwesomeIcon icon={faChevronRight} onClick={next} />
       </div>
-      <div
-        style={{
-          backgroundImage: `url(http://localhost:3000/img${index}.jpeg)`,
-        }}
-        className="slider-container"
-      ></div>
+      <div className="slider-container">
+        <div style={{width:'70%'}}>
+        <img alt="item-image" src={sliderData[index].imgUrl} height='100%' width='100%'/>
+        </div>
+        <div style={{width:'30%',padding:'1%',alignSelf:'center',marginBottom:'3vh',display:'flex',flexDirection:'column'}}>
+            <h1 style={headingStyle}>{sliderData[index].heading}</h1>
+            <p style={contentStyle}>{sliderData[index].content}</p>
+            <button style={buttonStyle}>View-More</button>
+        </div>
+      </div>
     </div>
   );
 }

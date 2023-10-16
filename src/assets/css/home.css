@@ -1,11 +1,12 @@
 section {
   font-family: serif;
-  padding: 1%;
+  margin: 1% auto;
 }
 section:nth-child(2n) {
   background-color: rgb(243, 243, 243);
   width: 95%;
   margin: auto;
+  padding: 0.5%;
 }
 .section-heading {
   font-size: 2rem;
@@ -25,31 +26,34 @@ section:nth-child(2n) {
   width: 95%;
   margin: auto;
 }
-
-#intro > div {
-  display: flex;
-  margin-bottom: 1vh;
-}
 #intro {
   padding-top: 7vh;
 }
-.intro-collage {
-  height: 45vh;
-  width: 50%;
-  border-radius: 10px;
-  padding: 0 1%;
-  min-height: 250px;
-}
 .intro-about {
-  position: relative;
-  align-self: center;
-  width: 50%;
+  width: 80%;
   font-size: 1.5rem;
   text-align: center;
   padding: 0 1%;
   animation-name: slide-and-fade;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
+  margin-top: 4vh;
+}
+.office-display{
+  height: 50vh;
+  display: flex;
+  padding: 1%;
+  width: 100%;
+}
+.companies{
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 2%;
+  width: inherit;
+}
+.company-item{
+  width: 8vw;
+  height: 4vh;
 }
 
 /* Media queries */
@@ -58,30 +62,14 @@ section:nth-child(2n) {
   #intro {
     padding-top: 5vh;
   }
-  #intro > div {
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2vh;
-  }
-  #first-display {
-    flex-direction: column;
-  }
-  #second-display {
-    flex-direction: column-reverse;
-  }
   .intro-about,
   .intro-collage {
-    width: 90%;
+    width: 100%;
     padding: 0.5%;
     font-size: 1.2rem;
     margin-bottom: 1vh;
   }
-  .intro-collage {
-    height: 250px;
-  }
-  .intro-about {
-    text-align: unset;
-  }
+ 
 }
 
 /* Animations */
