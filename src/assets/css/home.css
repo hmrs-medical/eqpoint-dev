@@ -40,21 +40,39 @@ section:nth-child(2n) {
   animation-timing-function: ease-in-out;
   margin-top: 4vh;
 }
-.office-display{
+.office-display {
   height: 50vh;
   display: flex;
   padding: 1%;
   width: 100%;
 }
-.companies{
+.companies {
   display: flex;
   justify-content: space-between;
   padding: 1% 2%;
   width: inherit;
 }
-.company-item{
+.company-item {
   width: 8vw;
   height: 4vh;
+}
+
+.swiper {
+  width: 40%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 15vw;
+  height: 15vh;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
 }
 
 /* Media queries */
@@ -70,7 +88,6 @@ section:nth-child(2n) {
     font-size: 1.2rem;
     margin-bottom: 1vh;
   }
- 
 }
 
 /* Animations */

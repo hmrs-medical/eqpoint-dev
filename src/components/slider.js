@@ -11,7 +11,7 @@ function Slider(props) {
   const numSlides = sliderData.length;
   useEffect(() => {
     const interval = setInterval(() => {
-      const isLast = index === numSlides-1;
+      const isLast = index === numSlides - 1;
       setIndex(isLast ? 0 : index + 1);
     }, 6000);
     return () => {
@@ -20,7 +20,7 @@ function Slider(props) {
   }, [index, numSlides]);
 
   const next = () => {
-    const isLast = index === numSlides-1;
+    const isLast = index === numSlides - 1;
     setIndex(isLast ? 0 : index + 1);
   };
   const prev = () => {
@@ -31,10 +31,13 @@ function Slider(props) {
   const contentStyle = sliderStyles.contentStyle;
   const buttonStyle = sliderStyles.buttonStyle;
   return (
-    
     <div
       className="slider-display"
-      style={{ height: props.height, width: props.width ,backgroundColor: props.backgroundColor }}
+      style={{
+        height: props.height,
+        width: props.width,
+        backgroundColor: props.backgroundColor,
+      }}
     >
       <div className="left-arrow arrow">
         <FontAwesomeIcon icon={faChevronLeft} onClick={prev} />
@@ -43,13 +46,27 @@ function Slider(props) {
         <FontAwesomeIcon icon={faChevronRight} onClick={next} />
       </div>
       <div className="slider-container">
-        <div style={{width:'70%'}}>
-        <img alt="item-image" src={sliderData[index].imgUrl} height='100%' width='100%'/>
+        <div style={{ width: "70%" }}>
+          <img
+            alt="item-image"
+            src={sliderData[index].imgUrl}
+            height="100%"
+            width="100%"
+          />
         </div>
-        <div style={{width:'30%',padding:'1%',alignSelf:'center',marginBottom:'3vh',display:'flex',flexDirection:'column'}}>
-            <h1 style={headingStyle}>{sliderData[index].heading}</h1>
-            <p style={contentStyle}>{sliderData[index].content}</p>
-            <button style={buttonStyle}>View-More</button>
+        <div
+          style={{
+            width: "30%",
+            padding: "1%",
+            alignSelf: "center",
+            marginBottom: "3vh",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <h1 style={headingStyle}>{sliderData[index].heading}</h1>
+          <p style={contentStyle}>{sliderData[index].content}</p>
+          <button style={buttonStyle}>View-More</button>
         </div>
       </div>
     </div>

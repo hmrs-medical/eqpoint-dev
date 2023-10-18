@@ -1,23 +1,37 @@
 // import { Link } from "react-router-dom";
 import "../assets/css/home.css";
 import collage from "../assets/images/medicalEquipments.jpg";
-import Slider from "./slider";
-function Home() {
 
+//custom carousel
+import Slider from "./slider";
+
+//swiper library imports
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import { EffectCoverflow, Pagination } from "swiper/modules";
+
+function Home() {
   return (
     <div className="home">
       <section id="intro">
-            <Slider numSlides={4} height={"75vh"} width={"100%"} backgroundColor={'rgb(243, 243, 243)'} />
-          <div className="intro-about subtext">
-            A well-diversified company that supplies quality products
-            manufactured by reliable resources and professional medical service
-            representatives.
-          </div>
+        <Slider
+          numSlides={4}
+          height={"75vh"}
+          width={"100%"}
+          backgroundColor={"rgb(243, 243, 243)"}
+        />
+        <div className="intro-about subtext">
+          A well-diversified company that supplies quality products manufactured
+          by reliable resources and professional medical service
+          representatives.
+        </div>
       </section>
       <section id="about">
         <h1 className="section-heading">About us</h1>
         <div id="about-display">
-          <div className="subtext" style={{fontSize:'1.3rem'}}>
+          <div className="subtext" style={{ fontSize: "1.3rem" }}>
             Established in March 2005 as a distribution company with an aim of
             marketing and trading medical equipments, medical devices and
             disposables in most efficient manner. Our main focus is to develop
@@ -45,11 +59,46 @@ function Home() {
           </div>
           <h2 className="subheading">Principal Companies</h2>
           <div className="companies">
-            <div className="company-item"><img alt='terumo-logo' src="http://localhost:3000/termo.png" height='120%' width='100%'/></div>
-            <div className="company-item"><img alt='terumo-logo' src="http://localhost:3000/thermo.png" height='100%' width='100%'/></div>
-            <div className="company-item"><img alt='terumo-logo' src="http://localhost:3000/ortho.png" height='100%' width='100%'/></div>
-            <div className="company-item"><img alt='terumo-logo' src="http://localhost:3000/optics.png" height='130%' width='100%'/></div>
-            <div className="company-item"><img alt='terumo-logo' src="http://localhost:3000/lisaline.png" height='100%' width='100%'/></div>
+            <div className="company-item">
+              <img
+                alt="terumo-logo"
+                src="http://localhost:3000/termo.png"
+                height="120%"
+                width="100%"
+              />
+            </div>
+            <div className="company-item">
+              <img
+                alt="terumo-logo"
+                src="http://localhost:3000/thermo.png"
+                height="100%"
+                width="100%"
+              />
+            </div>
+            <div className="company-item">
+              <img
+                alt="terumo-logo"
+                src="http://localhost:3000/ortho.png"
+                height="100%"
+                width="100%"
+              />
+            </div>
+            <div className="company-item">
+              <img
+                alt="terumo-logo"
+                src="http://localhost:3000/optics.png"
+                height="130%"
+                width="100%"
+              />
+            </div>
+            <div className="company-item">
+              <img
+                alt="terumo-logo"
+                src="http://localhost:3000/lisaline.png"
+                height="100%"
+                width="100%"
+              />
+            </div>
           </div>
           <h2 className="subheading">Our Location</h2>
           <div className="office-display">
@@ -62,20 +111,58 @@ function Home() {
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
-            <p className="subtext">
-              Our offices are located at 
-            </p>
+            <p className="subtext">Our offices are located at</p>
           </div>
-          
         </div>
       </section>
       <section id="clientel">
         <h1 className="section-heading">
           Building relationships based on trust
         </h1>
-        <div id="clientel-display">
-          
-        </div>
+        <Swiper
+          effect={"coverflow"}
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={"3"}
+          coverflowEffect={{
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          }}
+          pagination={true}
+          modules={[EffectCoverflow, Pagination]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+          </SwiperSlide>
+        </Swiper>
       </section>
     </div>
   );
