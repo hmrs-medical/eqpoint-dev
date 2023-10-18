@@ -27,3 +27,32 @@
 .right-arrow {
   right: 0.5vw;
 }
+.slider-img-container{
+  width: 70%; 
+}
+.slider-info-container{
+  width: 30%;
+  padding: 1%;
+  align-self: center;
+  margin-bottom: 3vh;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width:600px) {
+  .slider-container{
+    flex-direction: column;
+  }
+  .slider-img-container{
+    width: 100%;
+    height: 60%;
+  }
+  .slider-info-container{
+    width: 100%;
+    height: 40%;
+    padding: 0 0.5%;
+    margin: 0;
+    
+  }
+
+  
+}

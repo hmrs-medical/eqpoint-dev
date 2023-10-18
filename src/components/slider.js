@@ -46,7 +46,7 @@ function Slider(props) {
         <FontAwesomeIcon icon={faChevronRight} onClick={next} />
       </div>
       <div className="slider-container">
-        <div style={{ width: "70%" }}>
+        <div className="slider-img-container">
           <img
             alt="item-image"
             src={sliderData[index].imgUrl}
@@ -54,16 +54,7 @@ function Slider(props) {
             width="100%"
           />
         </div>
-        <div
-          style={{
-            width: "30%",
-            padding: "1%",
-            alignSelf: "center",
-            marginBottom: "3vh",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
+        <div className="slider-info-container">
           <h1 style={headingStyle}>{sliderData[index].heading}</h1>
           <p style={contentStyle}>{sliderData[index].content}</p>
           <button style={buttonStyle}>View-More</button>

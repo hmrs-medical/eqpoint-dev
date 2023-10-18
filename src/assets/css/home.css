@@ -26,6 +26,10 @@ section:nth-child(2n) {
   width: 95%;
   margin: auto;
 }
+.bullets{
+  width: 90%;
+  padding: 0.5%;
+}
 #intro {
   padding-top: 7vh;
   padding-bottom: 1%;
@@ -43,36 +47,35 @@ section:nth-child(2n) {
 .office-display {
   height: 50vh;
   display: flex;
+  justify-content: space-between;
   padding: 1%;
   width: 100%;
+}
+.office-display div {
+  margin: auto 3%;
+  width: 50%;
 }
 .companies {
   display: flex;
   justify-content: space-between;
   padding: 1% 2%;
   width: inherit;
+  flex-wrap: wrap;
 }
 .company-item {
-  width: 8vw;
-  height: 4vh;
+  max-width: 10%;
+  height: 5vh;
+  min-width: 100px;
 }
 
-.swiper {
-  width: 40%;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-  width: 15vw;
-  height: 15vh;
-}
-
-.swiper-slide img {
-  display: block;
+.clientel-display{
+  margin: auto;
+  display: flex;
   width: 100%;
+  justify-content: space-between;
+}
+.clientel-display > * {
+  width: 50%;
 }
 
 /* Media queries */
@@ -87,6 +90,31 @@ section:nth-child(2n) {
     padding: 0.5%;
     font-size: 1.2rem;
     margin-bottom: 1vh;
+  }
+  .company-item {
+    padding: 1%;
+    margin: auto;
+    width: 18%;
+    height: 5vh;
+    min-width: 100px;
+  }
+  .office-display{
+    flex-direction: column;
+  }
+  .office-display iframe {
+    height: 50%;
+    width: 100%;
+  }
+  .office-display div {
+    margin: auto;
+    width: 95%;
+  }
+  .clientel-display{
+    flex-direction: column-reverse;
+
+  }
+  .clientel-display > * {
+    width: 98%;
   }
 }
 

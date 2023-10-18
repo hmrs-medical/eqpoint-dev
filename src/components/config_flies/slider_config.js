@@ -26,14 +26,14 @@ export const sliderData = [
 ];
 export const sliderStyles = {
   headingStyle: {
-    fontSize: "1.8rem",
+    fontSize: "1.8em",
     textAlign: "center",
     fontFamily: "sans-serif",
     color: "#3b436e",
     marginBottom: "0",
   },
   contentStyle: {
-    fontSize: "1.2rem",
+    fontSize: "1.2em",
     textAlign: "center",
     fontfamily: "sans-serif",
     color: "rgb(84, 84, 84)",
@@ -42,12 +42,12 @@ export const sliderStyles = {
     fontFamily: "sans-serif",
     color: "#3a8a4d",
     fontWeight: "400",
-    width: "10vw",
+    width: "40%",
     height: "5vh",
-    margin: "auto",
+    margin: "1vh auto",
     borderRadius: "5px",
     border: "1px solid #3b436e",
     cursor: "pointer",
-    fontSize: "1.15rem",
+    fontSize: "1.1rem",
   },
 };
