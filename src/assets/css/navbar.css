@@ -15,12 +15,16 @@ body {
 }
 #logo {
   display: flex;
-  /* align-items: center; */
+  align-items: center;
+}
+#logo img{
+  height:50px;
 }
 #company-name {
   margin-left: 0.35vw;
   color: #3a8a4d;
-  font-size: 2rem;
+  font-size: 2.8rem;
+  font-weight: 550;
   font-family: "Carattere", cursive;
 }
 #nav-items ul {
@@ -31,7 +35,7 @@ body {
   margin-right: 2vw;
 }
 .nav-item > a {
-  font-size: 1.4rem;
+  font-size: 2rem;
   color: #444b71;
   font-family: serif;
 }
@@ -46,9 +50,17 @@ body {
 
 @media screen and (max-width: 600px) {
   .nav-item > a {
-    font-size: 1rem;
+    font-size: 0.8rem;
+  }
+  #logo img{
+    height: 2.8vh;
+    align-self: center;
+  }
+  #company-name{
+    font-size: 1.5rem;
+    align-self: center;
   }
   #navbar {
-    padding-top: 1%;
+    padding-top: 2%;
   }
 }

@@ -48,7 +48,7 @@ function Slider(props) {
       <div className="slider-container">
         <div className="slider-img-container">
           <img
-            alt="item-image"
+            alt={sliderData[index].heading}
             src={sliderData[index].imgUrl}
             height="100%"
             width="100%"

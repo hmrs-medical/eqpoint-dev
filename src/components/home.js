@@ -1,10 +1,14 @@
 import "../assets/css/home.css";
-
 //custom carousel
-import Slider from "./slider";
-
+import Slider from "./Slider";
 
 function Home() {
+  
+  const viewPCert = function(){
+    window.open("https://www.dropbox.com/scl/fi/9pahahjaftv1fyxkl4h49/CustomersPerformanceCert.pdf?rlkey=3tuiyzv3rmq73ry5dj0gxouep&dl=0","_black")
+  }
+
+
   return (
     <div className="home">
       <section id="intro">
@@ -115,6 +119,7 @@ function Home() {
           <h2 className="subheading">Our Office</h2>
           <div className="office-display">
             <iframe
+              title="google map office location"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.430815303244!2d77.10946547614591!3d28.706668380708834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0157b90bf289%3A0x86dc0d6eae2e7732!2sEquipment%20Point!5e0!3m2!1sen!2sin!4v1697293785094!5m2!1sen!2sin"
               width="50%"
               height="100%"
@@ -139,16 +144,37 @@ function Home() {
         <div className="clientel-display">
           <div className="testimonials">
             <h2 className="subheading">Testimonials</h2>
+            <div className="testimonials-display">
+              <div className="testimonial-left">
+                <a href="http://localhost:3000/Fortis_PC.jpeg" rel="noreferrer" target="_blank"><img alt="Fortis hospital performance certificate" src="http://localhost:3000/Fortis_PC.jpeg" height="100%" width="100%" /></a>
+              </div>
+              <div className="testimonial-right">
+                <div>
+                <a href="http://localhost:3000/Rajivgandhi_PC.jpeg" rel="noreferrer" target="_blank"><img alt="Rajiv Gandhi hospital performance certificate" src="http://localhost:3000/Rajivgandhi_PC.jpeg" height="100%" width="100%" /></a>
+                </div>
+                <div>
+                <a href="http://localhost:3000/BLK_PC.jpeg" rel="noreferrer" target="_blank"><img alt="BLK Max hospital performance certificate" src="http://localhost:3000/BLK_PC.jpeg" height="100%" width="100%" /></a>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="major-clients">
             <h2 className="subheading">Our major customers</h2>
-            <div className="subtext">Armed forces, Fortis group hospitals, Max group hospitals, Rajiv Gandhi cancer institute & research centre,
-             Delhi heart & lung institute, Jaipur golden hospital, Rotary blood bank, 
-             Cryo banks international, Delhi govt. equipment procurement cell, Esi hospital, 
-             Maharaja agrasen hospital, HIHT & medical college dehradun, Subharti medical college & Hospital, 
-             Susheela tiwari hospital Haldwani, JLN medical college, AMU aligarh, Panacea biotech, CCRUM ministry of health, 
-             Central soil research station, Central govt. etc.</div>
+            <div className="subtext major-clients-display" >
+              <ul>
+                <li>Armed forces</li><li>Fortis group hospitals</li>
+                <li>Max group hospitals</li><li>Rajiv Gandhi cancer institute & research centre</li>
+                <li>Delhi heart & lung institute</li><li>Jaipur golden hospital</li><li>Rotary blood bank</li>
+                <li>Cryo banks international</li><li>Delhi govt. equipment procurement cell</li><li>ESI hospital</li>
+                <li>Maharaja agrasen hospital</li><li>HIHT & medical college dehradun</li><li>Subharti medical college & Hospital</li>
+                <li>Susheela tiwari hospital Haldwani</li><li>JLN medical college</li><li>AMU aligarh</li>
+                <li>Panacea biotech</li><li>CCRUM ministry of health</li><li>Central soil research station</li><li>Central govt. etc.</li>
+              </ul>
+              <button id="performance-cert-btn" onClick={viewPCert}>View Performance Certificates</button>
+            </div>
+           
           </div>
+          
         </div>
       </section>
     </div>

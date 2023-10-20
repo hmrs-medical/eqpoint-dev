@@ -7,7 +7,7 @@ function Navbar(){
             <Link style={{textDecoration: 'none'}} to='/'>
                 <div id="logo">
                     
-                    <img className="logo-img" height="30px" src={logo} alt="logo"></img>
+                    <img className="logo-img" src={logo} alt="logo"></img>
                     <span id="company-name">Equipment Point</span>
                 </div>
             </Link>
