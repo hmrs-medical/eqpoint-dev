@@ -1,0 +1,24 @@
+export const products = {
+    bloodbank:[
+        {imgUrl:"http://localhost:3000/img1.jpeg",brochureUrl:"http://localhost:3000/",title:"prod1"},
+        {imgUrl:"http://localhost:3000/img2.jpeg",brochureUrl:"http://localhost:3000/",title:"prod2"},
+        {imgUrl:"http://localhost:3000/img3.jpeg",brochureUrl:"http://localhost:3000/",title:"prod3"},
+        {imgUrl:"http://localhost:3000/img4.jpeg",brochureUrl:"http://localhost:3000/",title:"prod4"},
+        {imgUrl:"http://localhost:3000/img1.jpeg",brochureUrl:"http://localhost:3000/",title:"prod5"},
+        {imgUrl:"http://localhost:3000/img2.jpeg",brochureUrl:"http://localhost:3000/",title:"prod6"},
+        {imgUrl:"http://localhost:3000/img3.jpeg",brochureUrl:"http://localhost:3000/",title:"prod7"},
+        {imgUrl:"http://localhost:3000/img4.jpeg",brochureUrl:"http://localhost:3000/",title:"prod8"},
+        {imgUrl:"http://localhost:3000/img1.jpeg",brochureUrl:"http://localhost:3000/",title:"prod9"},
+        {imgUrl:"http://localhost:3000/img2.jpeg",brochureUrl:"http://localhost:3000/",title:"prod10"},
+        {imgUrl:"http://localhost:3000/img3.jpeg",brochureUrl:"http://localhost:3000/",title:"prod11"}
+    ],
+    laboratory:[
+        {imgUrl:"",brochureUrl:""}
+    ],
+    research:[
+        {imgUrl:"",brochureUrl:""}
+    ],
+    coldchain:[
+        {imgUrl:"",brochureUrl:""}
+    ]
+}
