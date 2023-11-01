@@ -1,79 +1,128 @@
-.product-categories{
-    position: absolute;
-    top:20%;
-    width: 99vw;
-    height: 60vh;
-    display: flex;
-    transition: all 0.5s ease-in-out;
+.root {
+  height: 100vh;
+  font-family: sans-serif;
+}
+.product-categories {
+  position: absolute;
+  top: 15%;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  transition: all 0.3s linear;
+  margin: auto;
+  z-index: 1;
+}
+.category-item {
+  width: 25%;
+  height: inherit;
+  color: white;
+  min-height: 15vh;
+  min-width: 100px;
+  padding: 1vw;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+.category-item:hover {
+  transform: scale(1.08);
+  border-radius: 10px;
+}
+.item-info {
+  position: relative;
+  top: 60%;
+  transform: translateY(-50%);
+  backdrop-filter: blur(3px);
+  word-wrap: break-word;
+}
+.blood-bank {
+  background-image: url(http://localhost:3000/bloodwall.jpeg);
+  background-position: center;
+  background-size: cover;
+}
+.laboratory {
+  background-image: url(http://localhost:3000/img2.jpeg);
+  background-size: cover;
+}
+.research {
+  background-image: url(http://localhost:3000/img3.jpeg);
+  background-size: cover;
+}
+.cold-chain {
+  background-image: url(http://localhost:3000/img4.jpeg);
+  background-size: cover;
+}
+.products-display {
+  position: relative;
+  top: 40vh;
+  display: flex;
+  width: 80%;
+  padding: 2%;
+  flex-wrap: wrap;
+  margin: auto;
+}
+.product-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 1%;
+  font-size: 1.2rem;
+  color: white;
+  backdrop-filter: blur(10px);
+}
+.product-item {
+  width: 18%;
+  height: 20vh;
+  position: relative;
+  animation: slide-and-fade 0.5s ease-in-out;
+  margin: 1%;
+  box-shadow: 0 0 2px black;
+}
 
+.minimize {
+  height: 25vh;
+  top: 10vh;
+  font-size: 0.8rem;
 }
-.category-item{
-    /* transform: translateY(-50%); */
-    width: 25%;
-    height: inherit;
-    color: white;
-    min-height: 15vh;
-    min-width: 100px;
-    padding: 1vw;
-}
-.item-info{
-    position: relative;
-    top:60%;
-    backdrop-filter: blur(3px);
-    word-wrap: break-word;
-}
-.blood-bank{
-    background-image: url(http://localhost:3000/img1.jpeg);
-    background-position: center;
-    background-size: cover;
-}
-.laboratory{
-    background-image: url(http://localhost:3000/img2.jpeg);
-    background-size: cover;
-}
-.research{
-    background-image: url(http://localhost:3000/img3.jpeg);
-    background-size: cover;
-}
-.cold-chain{
-    background-image: url(http://localhost:3000/img4.jpeg);
-    background-size: cover;
-}
-.products-display{
-    position: relative;
-    top: 30vh;
-    display: flex;
-    border: 2px solid black;
-}
-.product-item{
-    height: 10%;
-    width: 10%;
-    position: relative;
-}
-.product-title{
-    position: absolute;
-    bottom: 5%;
+.isActive {
+  color: #3a8a4d;
 }
 
-
-.minimize{
-    height: fit-content;
-    top: 10vh;
-    font-size: 0.8rem;
+@media screen and (max-width: 600px) {
+  .product-categories {
+    overflow: auto;
+    width: 100%;
+    flex-direction: column;
+  }
+  .category-item {
+    font-size: 0.8;
+    width: 100%;
+    font-size: 0.5rem;
+  }
+  .minimize {
+    top: 6vh;
+    font-size: 0.5rem;
+    flex-direction: row;
+  }
+  .product-item {
+    width: 46%;
+  }
+  .item-info {
+    top: 50%;
+  }
+  .item-info h1 {
+    font-size: 0.7rem;
+  }
 }
-.isActive{
-    color:  #3a8a4d;
-}
 
-@media screen and (max-width:600px) {
-    .product-categories{
-        overflow: auto;
-    }
-    .category-item{
-        font-size: 0.8;
-    }
-    .minimize{
-        top: 6vh;
-        font-size: 0.5rem;
-    }
-}   
+/* Animations */
+@keyframes slide-and-fade {
+  from {
+    left: -3vw;
+    opacity: 0;
+    font-weight: 100;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+    font-weight: 400;
+  }
+}

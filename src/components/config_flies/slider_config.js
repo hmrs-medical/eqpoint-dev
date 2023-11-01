@@ -3,25 +3,25 @@ export const sliderData = [
     imgUrl: "http://localhost:3000/img1.jpeg",
     heading: "Blood bank Equipments/Consumables",
     content:
-      "Redundant alt attribute. Screen-readers already announce `img` tags as an image. You don’t need to use the words",
+      "We are a leading supplier of quality products for blood collection, screening, storage, and transfusion. Whether you need donor cards, Hb devices, EDTA tubes, sterilizing trays, or any other item from our comprehensive list, we have it all at affordable prices and fast delivery.",
   },
   {
     imgUrl: "http://localhost:3000/img2.jpeg",
     heading: "Laboratory Equipments/Consumables",
     content:
-      "Redundant alt attribute. Screen-readers already announce `img` tags as an image. You don’t need to use the words",
+      " Quality products for medical testing, diagnosis, research, and education. Whether you need microscopes, centrifuges, pipettes, reagents, slides, or any other item from our extensive list, we have it all at competitive prices and fast delivery.",
   },
   {
     imgUrl: "http://localhost:3000/img3.jpeg",
     heading: "Reasearch Equipments/Consumables",
     content:
-      "Redundant alt attribute. Screen-readers already announce `img` tags as an image. You don’t need to use the words",
+      " Quality products for medical research, innovation, and discovery. Whether you need PCR machines, electrophoresis units, spectrophotometers, antibodies, primers, or any other item from our wide range of list",
   },
   {
     imgUrl: "http://localhost:3000/img4.jpeg",
     heading: "Cold chain management Solutions",
     content:
-      "Redundant alt attribute. Screen-readers already announce `img` tags as an image. You don’t need to use the words",
+      "Helping you the temperature and quality of perishable goods such as vaccines, medicines, food, and flowers during transportation and storage. Whether you need refrigerators, freezers, thermometers, data loggers, or any other item from our diverse list.",
   },
 ];
 export const sliderStyles = {
@@ -34,7 +34,7 @@ export const sliderStyles = {
   },
   contentStyle: {
     fontSize: "1.2em",
-    textAlign: "center",
+    // textAlign: "justify",
     fontfamily: "sans-serif",
     color: "rgb(84, 84, 84)",
   },
