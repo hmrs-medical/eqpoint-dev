@@ -57,7 +57,9 @@ function Slider(props) {
         <div className="slider-info-container">
           <h1 style={headingStyle}>{sliderData[index].heading}</h1>
           <p style={contentStyle}>{sliderData[index].content}</p>
-          <button style={buttonStyle}>View-More</button>
+          <a href={sliderData[index].href}>
+            <button style={buttonStyle}>View-More</button>
+          </a>
         </div>
       </div>
     </div>

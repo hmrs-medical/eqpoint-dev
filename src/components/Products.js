@@ -3,32 +3,62 @@ import "../assets/css/product.css";
 import { useEffect, useState } from "react";
 import db from "./config_flies/firebase";
 import { collection, getDocs } from "firebase/firestore";
-const products = {};
+let products = {};
 
-function Products() {
+function Products(props) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [items, setItems] = useState([]);
-  const prodCategories = ["bloodbank", "laboratory", "research", "coldchain"];
+
   const minimize = function () {
     setIsExpanded(true);
   };
   useEffect(() => {
-    prodCategories.forEach((category) => {
-      let arr = (async () => {
-        const querySnapshot = await getDocs(collection(db, category));
-        const arr = [];
-        let index = 0;
-        querySnapshot.forEach((doc) => {
-          arr[index] = doc.data();
-          arr[index].id = doc.id;
-          index++;
-        });
-        return arr;
-      })();
-      arr.then((arr) => {
-        products[category] = [...arr];
-      });
-    });
+    async function fetchData(category) {
+      const querySnapshot = await getDocs(collection(db, category));
+      const docs = querySnapshot.docs;
+      let arr = [];
+      let index = 0;
+      for (let doc of docs) {
+        arr[index] = doc.data();
+        arr[index].id = doc.id;
+        index++;
+      }
+      return arr;
+    }
+    async function getData() {
+      const bloodbank = await fetchData("bloodbank");
+      const laboratory = await fetchData("laboratory");
+      const research = await fetchData("research");
+      const coldchain = await fetchData("coldchain");
+      products = { bloodbank: [...bloodbank], laboratory, research, coldchain };
+    }
+    getData();
+    console.log(products);
+    // console.log(fetchData("bloodbank"));
+
+    // prodCategories.forEach((category) => {
+    //   let arr = (async () => {
+    //     const querySnapshot = await getDocs(collection(db, category));
+    //     const arr = [];
+    //     let index = 0;
+    //     querySnapshot.forEach((doc) => {
+    //       arr[index] = doc.data();
+    //       arr[index].id = doc.id;
+    //       index++;
+    //     });
+    //     return arr;
+    //   })();
+    //   arr.then((arr) => {
+    //     products[category] = [...arr];
+    //   });
+    // });
+    // setTimeout(() => {
+    //   if (props.minimize) {
+    //     console.log(products[props.category]);
+    //     minimize();
+    //     setItems(products[props.category]);
+    //   }
+    // }, 300);
   }, []);
 
   return (
@@ -54,7 +84,7 @@ function Products() {
         </div>
         <div
           id="laboratory"
-          onClick={(e) => {
+          onClick={() => {
             minimize();
             setItems(products.laboratory);
           }}
@@ -106,7 +136,6 @@ function Products() {
                 backgroundSize: "cover",
               }}
             >
-              {/* <img height="100%" width="100%" src={product.imgUrl}></img> */}
               <div className="product-title">{product.title}</div>
             </div>
           </a>

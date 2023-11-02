@@ -133,6 +133,7 @@ section:nth-child(2n) {
     padding: 0.5%;
     font-size: 1.2rem;
     margin-bottom: 1vh;
+    font-size: 0.7rem;
   }
   .company-item {
     padding: 1%;

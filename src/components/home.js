@@ -31,7 +31,7 @@ function Home() {
       <section id="about">
         <h1 className="section-heading">About us</h1>
         <div id="about-display">
-          <div className="subtext" style={{ fontSize: "1.3rem" }}>
+          <div className="subtext" style={{ fontSize: "1.3 em" }}>
             Established in March 2005 as a distribution company with an aim of
             marketing and trading medical equipments, medical devices and
             disposables in most efficient manner. Our main focus is to develop
