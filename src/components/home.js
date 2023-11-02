@@ -1,6 +1,6 @@
 import "../assets/css/home.css";
 //custom carousel
-import Slider from "./Slider";
+import Slider from "./slider";
 
 function Home() {
   const viewPCert = function () {

@@ -3,63 +3,66 @@ import "../assets/css/product.css";
 import { useEffect, useState } from "react";
 import db from "./config_flies/firebase";
 import { collection, getDocs } from "firebase/firestore";
-let products = {};
+import { products }  from "./config_flies/products";
 
 function Products(props) {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [items, setItems] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [items,setItems] = useState([]);
+  // const [items,setItems] = useState([]);
+
+  const allProducts = {};
+  let clicked = false;
 
   const minimize = function () {
     setIsExpanded(true);
   };
-  useEffect(() => {
-    async function fetchData(category) {
-      const querySnapshot = await getDocs(collection(db, category));
-      const docs = querySnapshot.docs;
-      let arr = [];
-      let index = 0;
-      for (let doc of docs) {
-        arr[index] = doc.data();
-        arr[index].id = doc.id;
-        index++;
-      }
-      return arr;
-    }
-    async function getData() {
-      const bloodbank = await fetchData("bloodbank");
-      const laboratory = await fetchData("laboratory");
-      const research = await fetchData("research");
-      const coldchain = await fetchData("coldchain");
-      products = { bloodbank: [...bloodbank], laboratory, research, coldchain };
-    }
-    getData();
-    console.log(products);
-    // console.log(fetchData("bloodbank"));
+  // useEffect(() => {
+  //   async function fetchData(category) {
+  //     const querySnapshot = await getDocs(collection(db, category));
+  //     const docs = querySnapshot.docs;
+  //     let arr = [];
+  //     let index = 0;
+  //     for (let doc of docs) {
+  //       arr[index] = doc.data();
+  //       arr[index].id = doc.id;
+  //       index++;
+  //     }
+  //     return arr;
+  //   }
+  //   async function getData() {
+  //     allProducts.bloodbank = await fetchData("bloodbank");
+  //     // allProducts.laboratory = await fetchData("Processing");
+  //     // allProducts.research = await fetchData("Storage");
+  //     // allProducts.coldchain = await fetchData("Issue");
+      
+  //   }
 
-    // prodCategories.forEach((category) => {
-    //   let arr = (async () => {
-    //     const querySnapshot = await getDocs(collection(db, category));
-    //     const arr = [];
-    //     let index = 0;
-    //     querySnapshot.forEach((doc) => {
-    //       arr[index] = doc.data();
-    //       arr[index].id = doc.id;
-    //       index++;
-    //     });
-    //     return arr;
-    //   })();
-    //   arr.then((arr) => {
-    //     products[category] = [...arr];
-    //   });
-    // });
-    // setTimeout(() => {
-    //   if (props.minimize) {
-    //     console.log(products[props.category]);
-    //     minimize();
-    //     setItems(products[props.category]);
-    //   }
-    // }, 300);
-  }, []);
+  //   (async()=>{
+  //     await getData();
+  //     if(props.minimize){
+  //       minimize();
+  //       // setItems(products[props.category]);
+  //       setCategories(products[props.category]);
+  //     }
+  //   })()
+   
+  // }, []);
+
+  const getData = async function(category){
+
+        console.log(category)
+        const querySnapshot = await getDocs(collection(db, category));
+        const docs = querySnapshot.docs;
+        let arr = [];
+        let index = 0;
+        for (let doc of docs) {
+          arr[index] = doc.data();
+          arr[index].id = doc.id;
+          index++;
+        }
+        return arr;
+  }
 
   return (
     <div className="root">
@@ -73,7 +76,7 @@ function Products(props) {
           id="bloodbank"
           onClick={() => {
             minimize();
-            setItems(products.bloodbank);
+            setCategories(products.bloodbank);
           }}
           className="category-item blood-bank"
         >
@@ -86,7 +89,7 @@ function Products(props) {
           id="laboratory"
           onClick={() => {
             minimize();
-            setItems(products.laboratory);
+            setCategories(products.laboratory);
           }}
           className="category-item laboratory"
         >
@@ -99,7 +102,7 @@ function Products(props) {
           id="research"
           onClick={() => {
             minimize();
-            setItems(products.research);
+            setCategories(products.research);
           }}
           className="category-item research"
         >
@@ -112,7 +115,7 @@ function Products(props) {
           id="coldchain"
           onClick={() => {
             minimize();
-            setItems(products.coldchain);
+            setCategories(products.coldchain);
           }}
           className="category-item cold-chain"
         >
@@ -123,23 +126,35 @@ function Products(props) {
         </div>
       </div>
       <div className="products-display">
-        {items.map((product) => (
-          <a
-            className="product-item"
-            key={product.id}
-            href={product.brochureUrl}
-          >
-            <div
-              style={{
-                height: "inherit",
-                backgroundImage: `url(${product.imgUrl})`,
-                backgroundSize: "cover",
-              }}
-            >
-              <div className="product-title">{product.title}</div>
+        {categories.map((subcategory) => (
+            <div className="product-category" 
+            onClick={
+              async()=>{
+                const arr = await getData(subcategory);
+                setItems(arr);
+                clicked = true;
+              }
+            }>
+              <h2>{subcategory}</h2>
+              {/* {clicked?:""} */}
+              <div className="product-category-display">
+                {items.map((item)=>(
+                <div className="product-item">
+                  <div className="product-item-img">
+                  </div>
+                  <div className="product-item-info">
+                    <div>{item.title}</div>
+                    <div>{item.companyName}</div>
+                    <a className="brochure" href={item.brochureUrl}></a>
+                  </div>
+                </div>
+              ))}
+              </div>
+              
+              
             </div>
-          </a>
-        ))}
+          ))}
+        
       </div>
     </div>
   );

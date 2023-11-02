@@ -54,27 +54,32 @@
   position: relative;
   top: 40vh;
   display: flex;
-  width: 80%;
+  flex-direction: column;
+  width: 90%;
   padding: 2%;
   flex-wrap: wrap;
   margin: auto;
 }
-.product-title {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 1%;
-  font-size: 1.2rem;
-  color: white;
-  backdrop-filter: blur(10px);
+.product-category {
+  height: fit-content;
+  margin: 1%;
+  width: 90%;
+  background-color: rgb(243, 243, 243);
+  padding: 0 1%;
 }
+
 .product-item {
-  width: 18%;
+  width: 25%;
   height: 20vh;
   position: relative;
   animation: slide-and-fade 0.5s ease-in-out;
   margin: 1%;
   box-shadow: 0 0 2px black;
+  display: flex;
+}
+.product-item-info{
+  display: flex;
+  flex-direction: column;
 }
 
 .minimize {
