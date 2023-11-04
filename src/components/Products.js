@@ -3,80 +3,62 @@ import "../assets/css/product.css";
 import { useEffect, useState } from "react";
 import db from "./config_flies/firebase";
 import { collection, getDocs } from "firebase/firestore";
-import { products }  from "./config_flies/products";
+import { prodCategory } from "./config_flies/products";
+import { prodSubCategory } from "./config_flies/products";
+const displayProds = {};
 
 function Products(props) {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
   const [categories, setCategories] = useState([]);
-  const [items,setItems] = useState([]);
-  // const [items,setItems] = useState([]);
-
-  const allProducts = {};
-  let clicked = false;
 
   const minimize = function () {
-    setIsExpanded(true);
+    setIsExpanded(false);
   };
-  // useEffect(() => {
-  //   async function fetchData(category) {
-  //     const querySnapshot = await getDocs(collection(db, category));
-  //     const docs = querySnapshot.docs;
-  //     let arr = [];
-  //     let index = 0;
-  //     for (let doc of docs) {
-  //       arr[index] = doc.data();
-  //       arr[index].id = doc.id;
-  //       index++;
-  //     }
-  //     return arr;
-  //   }
-  //   async function getData() {
-  //     allProducts.bloodbank = await fetchData("bloodbank");
-  //     // allProducts.laboratory = await fetchData("Processing");
-  //     // allProducts.research = await fetchData("Storage");
-  //     // allProducts.coldchain = await fetchData("Issue");
-      
-  //   }
 
-  //   (async()=>{
-  //     await getData();
-  //     if(props.minimize){
-  //       minimize();
-  //       // setItems(products[props.category]);
-  //       setCategories(products[props.category]);
-  //     }
-  //   })()
-   
-  // }, []);
+  useEffect(() => {
+    console.log("useEffect");
+    if (props.minimize) {
+      setTimeout(() => {
+        setCategories(prodCategory[props.category]);
+        minimize();
+      }, 200);
+    }
+    async function fetchData(element) {
+      const querySnapshot = await getDocs(collection(db, element));
+      const docs = querySnapshot.docs;
+      let arr = [];
+      let index = 0;
+      for (let doc of docs) {
+        arr[index] = doc.data();
+        arr[index].id = doc.id;
+        index++;
+      }
 
-  const getData = async function(category){
-
-        console.log(category)
-        const querySnapshot = await getDocs(collection(db, category));
-        const docs = querySnapshot.docs;
-        let arr = [];
-        let index = 0;
-        for (let doc of docs) {
-          arr[index] = doc.data();
-          arr[index].id = doc.id;
-          index++;
-        }
-        return arr;
-  }
-
+      return arr;
+    }
+    function getData() {
+      prodSubCategory.forEach(async (subcategory) => {
+        const arr = await fetchData(subcategory);
+        displayProds[subcategory] = arr;
+      });
+    }
+    getData();
+  }, []);
   return (
     <div className="root">
       <Navbar />
       <div
         className={
-          isExpanded ? "product-categories minimize" : "product-categories"
+          !isExpanded ? "product-categories minimize" : "product-categories"
         }
       >
         <div
           id="bloodbank"
           onClick={() => {
-            minimize();
-            setCategories(products.bloodbank);
+            setCategories(prodCategory.bloodbank);
+            if (isExpanded) {
+              minimize();
+            }
           }}
           className="category-item blood-bank"
         >
@@ -88,8 +70,10 @@ function Products(props) {
         <div
           id="laboratory"
           onClick={() => {
-            minimize();
-            setCategories(products.laboratory);
+            setCategories(prodCategory.laboratory);
+            if (isExpanded) {
+              minimize();
+            }
           }}
           className="category-item laboratory"
         >
@@ -101,8 +85,10 @@ function Products(props) {
         <div
           id="research"
           onClick={() => {
-            minimize();
-            setCategories(products.research);
+            setCategories(prodCategory.research);
+            if (isExpanded) {
+              minimize();
+            }
           }}
           className="category-item research"
         >
@@ -114,8 +100,10 @@ function Products(props) {
         <div
           id="coldchain"
           onClick={() => {
-            minimize();
-            setCategories(products.coldchain);
+            setCategories(prodCategory.coldchain);
+            if (isExpanded) {
+              minimize();
+            }
           }}
           className="category-item cold-chain"
         >
@@ -125,36 +113,35 @@ function Products(props) {
           </div>
         </div>
       </div>
+
       <div className="products-display">
         {categories.map((subcategory) => (
-            <div className="product-category" 
-            onClick={
-              async()=>{
-                const arr = await getData(subcategory);
-                setItems(arr);
-                clicked = true;
-              }
-            }>
-              <h2>{subcategory}</h2>
-              {/* {clicked?:""} */}
-              <div className="product-category-display">
-                {items.map((item)=>(
-                <div className="product-item">
-                  <div className="product-item-img">
+          <div className="product-category">
+            <h2 className="product-subcategory">{subcategory}</h2>
+            <div className="product-category-display">
+              {console.log(displayProds)}
+              {displayProds[subcategory].map((item) => (
+                <a
+                  key={item.id}
+                  className="product-item-brochure"
+                  href={item.brochureUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div
+                    style={{ backgroundImage: `url(${item.imgUrl})` }}
+                    className="product-item"
+                  >
+                    <div className="product-item-info">
+                      <div className="product-item-name">{item.title}</div>
+                      <div className="product-item-company">{item.company}</div>
+                    </div>
                   </div>
-                  <div className="product-item-info">
-                    <div>{item.title}</div>
-                    <div>{item.companyName}</div>
-                    <a className="brochure" href={item.brochureUrl}></a>
-                  </div>
-                </div>
+                </a>
               ))}
-              </div>
-              
-              
             </div>
-          ))}
-        
+          </div>
+        ))}
       </div>
     </div>
   );

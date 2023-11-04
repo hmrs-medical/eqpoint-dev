@@ -57,29 +57,71 @@
   flex-direction: column;
   width: 90%;
   padding: 2%;
-  flex-wrap: wrap;
   margin: auto;
 }
 .product-category {
   height: fit-content;
   margin: 1%;
-  width: 90%;
-  background-color: rgb(243, 243, 243);
+  width: 95%;
+  /* background-color: rgb(243, 243, 243); */
   padding: 0 1%;
 }
-
-.product-item {
-  width: 25%;
+.product-category-display {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.product-category-display > * {
+  width: 12%;
   height: 20vh;
+  margin: 0.8vw;
+}
+.product-subcategory {
+  color: #3b436e;
+}
+.product-item {
+  height: inherit;
+  width: 100%;
   position: relative;
   animation: slide-and-fade 0.5s ease-in-out;
-  margin: 1%;
-  box-shadow: 0 0 2px black;
-  display: flex;
+  margin: 0.8vw;
+  box-shadow: 0 0 1px green;
+  align-items: center;
+  cursor: pointer;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.product-item-info{
+/* .product-item:hover {
+  transform: scale(1.05);
+  background-size: cover;
+  background-repeat: no-repeat;
+} */
+.product-item-info {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  width: inherit;
+  /* padding: 1%; */
+  backdrop-filter: blur(50px);
+  align-items: center;
+  bottom: 2%;
+  flex-wrap: wrap;
+  word-wrap: normal;
+}
+.product-item-name {
+  color: rgb(26, 95, 53);
+  align-self: flex-start;
+  width: inherit;
+  font-size: 1.2em;
+}
+.product-item-company {
+  color: #2c3d30;
+  width: inherit;
+}
+.product-item-brochure {
+  text-decoration: none;
+  color: unset;
 }
 
 .minimize {
@@ -90,8 +132,7 @@
 .isActive {
   color: #3a8a4d;
 }
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .product-categories {
     overflow: auto;
     width: 100%;
@@ -107,15 +148,31 @@
     font-size: 0.5rem;
     flex-direction: row;
   }
-  .product-item {
-    width: 46%;
+  .product-category-display {
+    justify-content: space-between;
   }
-  .item-info {
-    top: 50%;
+  .product-category-display > * {
+    width: 20%;
+    height: 20vh;
+    margin: 1vw;
   }
-  .item-info h1 {
-    font-size: 0.7rem;
+  /* .product-item {
+    width: 40vw;
+  } */
+}
+
+@media screen and (max-width: 600px) {
+  .product-category-display {
+    justify-content: space-between;
   }
+  .product-category-display > * {
+    width: 40%;
+    height: 20vh;
+    margin: 1vw;
+  }
+  /* .product-item {
+    width: 40vw;
+  } */
 }
 
 /* Animations */
