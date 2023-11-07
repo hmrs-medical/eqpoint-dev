@@ -6,7 +6,7 @@ function Home() {
   const viewPCert = function () {
     window.open(
       "https://www.dropbox.com/scl/fi/9pahahjaftv1fyxkl4h49/CustomersPerformanceCert.pdf?rlkey=3tuiyzv3rmq73ry5dj0gxouep&dl=0",
-      "_black"
+      "_blank"
     );
   };
 

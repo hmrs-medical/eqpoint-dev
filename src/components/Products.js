@@ -17,12 +17,6 @@ function Products(props) {
 
   useEffect(() => {
     console.log("useEffect");
-    if (props.minimize) {
-      setTimeout(() => {
-        setCategories(prodCategory[props.category]);
-        minimize();
-      }, 200);
-    }
     async function fetchData(element) {
       const querySnapshot = await getDocs(collection(db, element));
       const docs = querySnapshot.docs;
@@ -43,7 +37,13 @@ function Products(props) {
       });
     }
     getData();
-  }, []);
+    if (props.minimize) {
+      setTimeout(() => {
+        setCategories(prodCategory[props.category]);
+        minimize();
+      }, 400);
+    }
+  }, [props.category, props.minimize]);
   return (
     <div className="root">
       <Navbar />
