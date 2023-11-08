@@ -28,10 +28,13 @@
 }
 .item-info {
   position: relative;
+  font-family: sans-serif;
   top: 60%;
   transform: translateY(-50%);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(8px);
   word-wrap: break-word;
+  text-decoration: solid;
+  font-style: oblique;
 }
 .blood-bank {
   background-image: url(http://localhost:3000/bloodwall.jpeg);

@@ -38,6 +38,7 @@ function Products(props) {
     }
     getData();
     if (props.minimize) {
+      
       setTimeout(() => {
         setCategories(prodCategory[props.category]);
         minimize();
@@ -63,8 +64,8 @@ function Products(props) {
           className="category-item blood-bank"
         >
           <div className="item-info">
-            <h1>Bloodbank Equipments/Consumables</h1>
-            <p>Sample information about the category Item</p>
+            <h1>Bloodbank Equipments & Consumables</h1>
+
           </div>
         </div>
         <div
@@ -78,8 +79,8 @@ function Products(props) {
           className="category-item laboratory"
         >
           <div className="item-info">
-            <h1>Laboratory Equipments/Consumables</h1>
-            <p>Sample information about the category Item</p>
+            <h1>Laboratory Equipments & Consumables</h1>
+            
           </div>
         </div>
         <div
@@ -93,8 +94,8 @@ function Products(props) {
           className="category-item research"
         >
           <div className="item-info">
-            <h1>Research Equipments/Consumables</h1>
-            <p>Sample information about the category Item</p>
+            <h1>Research Equipments & Consumables</h1>
+            
           </div>
         </div>
         <div
@@ -108,8 +109,8 @@ function Products(props) {
           className="category-item cold-chain"
         >
           <div className="item-info">
-            <h1>Cold chain management Solutions</h1>
-            <p>Sample information about the category Item</p>
+            <h1>Cold-chain Management Solutions</h1>
+            
           </div>
         </div>
       </div>

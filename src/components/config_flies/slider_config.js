@@ -25,7 +25,7 @@ export const sliderData = [
     imgUrl: "http://localhost:3000/img4.jpeg",
     heading: "Cold chain management Solutions",
     content:
-      "Helping you the temperature and quality of perishable goods such as vaccines, medicines, food, and flowers during transportation and storage. Whether you need refrigerators, freezers, thermometers, data loggers, or any other item from our diverse list.",
+      "Helping you maintain the temperature and quality of perishable goods such as vaccines, medicines, tissues, and cells during transportation and storage. Whether you need refrigerators, freezers, thermometers, data loggers, or any other item from our diverse list.",
   },
 ];
 export const sliderStyles = {

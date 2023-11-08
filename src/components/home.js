@@ -19,11 +19,11 @@ function Home() {
           width={"100%"}
           backgroundColor={"rgb(243, 243, 243)"}
         />
-        <div className="intro-about subtext">
+        <div className="intro-about">
           A well-diversified company that supplies quality products manufactured
           by reliable resources and professional medical service
           representatives.
-          <h3 style={{ color: "#3a8a4d" }}>
+          <h3 style={{ color: "#3a8a4d" ,textAlign:"center"}}>
             <b>“WE BELIEVE IN HONESTY & CUSTOMER FIRST APPROACH”</b>
           </h3>
         </div>
