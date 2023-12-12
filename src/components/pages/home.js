@@ -1,6 +1,5 @@
-import "../assets/css/home.css";
-//custom carousel
-import Slider from "./slider";
+import "../../assets/css/home.css";
+import Slider from "../slider";
 
 function Home() {
   const viewPCert = function () {
@@ -9,7 +8,6 @@ function Home() {
       "_blank"
     );
   };
-
   return (
     <div className="home">
       <section id="intro">
@@ -23,7 +21,7 @@ function Home() {
           A well-diversified company that supplies quality products manufactured
           by reliable resources and professional medical service
           representatives.
-          <h3 style={{ color: "#3a8a4d" ,textAlign:"center"}}>
+          <h3 style={{ color: "#3a8a4d", textAlign: "center" }}>
             <b>“WE BELIEVE IN HONESTY & CUSTOMER FIRST APPROACH”</b>
           </h3>
         </div>

@@ -1,5 +1,5 @@
-import Navbar from "./Navbar";
-import "../assets/css/contact.css";
+import Navbar from "../Navbar";
+import "../../assets/css/contact.css";
 function Contact() {
   return (
     <div>

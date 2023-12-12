@@ -5,6 +5,7 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { sliderData } from "./config_flies/slider_config";
 import { sliderStyles } from "./config_flies/slider_config";
+import { Link } from "react-router-dom";
 
 function Slider(props) {
   const [index, setIndex] = useState(0);
@@ -57,9 +58,9 @@ function Slider(props) {
         <div className="slider-info-container">
           <h1 style={headingStyle}>{sliderData[index].heading}</h1>
           <p style={contentStyle}>{sliderData[index].content}</p>
-          <a href={sliderData[index].href}>
+          <Link to={sliderData[index].href}>
             <button style={buttonStyle}>View-More</button>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

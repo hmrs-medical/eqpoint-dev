@@ -1,48 +1,19 @@
-import Navbar from "./Navbar";
-import "../assets/css/product.css";
+import Navbar from "../Navbar";
+import "../../assets/css/product.css";
 import { useEffect, useState } from "react";
-import db from "./config_flies/firebase";
+import { prodCategory } from "../config_flies/products";
+import db from "../config_flies/firebase";
 import { collection, getDocs } from "firebase/firestore";
-import { prodCategory } from "./config_flies/products";
-import { prodSubCategory } from "./config_flies/products";
-const displayProds = {};
+import Loader from "../Loader";
 
 function Products(props) {
   const [isExpanded, setIsExpanded] = useState(true);
   const [categories, setCategories] = useState([]);
 
-  const minimize = function () {
-    setIsExpanded(false);
-  };
-
   useEffect(() => {
-    console.log("useEffect");
-    async function fetchData(element) {
-      const querySnapshot = await getDocs(collection(db, element));
-      const docs = querySnapshot.docs;
-      let arr = [];
-      let index = 0;
-      for (let doc of docs) {
-        arr[index] = doc.data();
-        arr[index].id = doc.id;
-        index++;
-      }
-
-      return arr;
-    }
-    function getData() {
-      prodSubCategory.forEach(async (subcategory) => {
-        const arr = await fetchData(subcategory);
-        displayProds[subcategory] = arr;
-      });
-    }
-    getData();
     if (props.minimize) {
-      
-      setTimeout(() => {
-        setCategories(prodCategory[props.category]);
-        minimize();
-      }, 400);
+      setCategories(prodCategory[props.category]);
+      setIsExpanded(false);
     }
   }, [props.category, props.minimize]);
   return (
@@ -58,14 +29,13 @@ function Products(props) {
           onClick={() => {
             setCategories(prodCategory.bloodbank);
             if (isExpanded) {
-              minimize();
+              setIsExpanded(false);
             }
           }}
           className="category-item blood-bank"
         >
           <div className="item-info">
             <h1>Bloodbank Equipments & Consumables</h1>
-
           </div>
         </div>
         <div
@@ -73,14 +43,13 @@ function Products(props) {
           onClick={() => {
             setCategories(prodCategory.laboratory);
             if (isExpanded) {
-              minimize();
+              setIsExpanded(false);
             }
           }}
           className="category-item laboratory"
         >
           <div className="item-info">
             <h1>Laboratory Equipments & Consumables</h1>
-            
           </div>
         </div>
         <div
@@ -88,14 +57,13 @@ function Products(props) {
           onClick={() => {
             setCategories(prodCategory.research);
             if (isExpanded) {
-              minimize();
+              setIsExpanded(false);
             }
           }}
           className="category-item research"
         >
           <div className="item-info">
             <h1>Research Equipments & Consumables</h1>
-            
           </div>
         </div>
         <div
@@ -103,47 +71,74 @@ function Products(props) {
           onClick={() => {
             setCategories(prodCategory.coldchain);
             if (isExpanded) {
-              minimize();
+              setIsExpanded(false);
             }
           }}
           className="category-item cold-chain"
         >
           <div className="item-info">
             <h1>Cold-chain Management Solutions</h1>
-            
           </div>
         </div>
       </div>
-
       <div className="products-display">
         {categories.map((subcategory) => (
           <div className="product-category">
             <h2 className="product-subcategory">{subcategory}</h2>
-            <div className="product-category-display">
-              {console.log(displayProds)}
-              {displayProds[subcategory].map((item) => (
-                <a
-                  key={item.id}
-                  className="product-item-brochure"
-                  href={item.brochureUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <div
-                    style={{ backgroundImage: `url(${item.imgUrl})` }}
-                    className="product-item"
-                  >
-                    <div className="product-item-info">
-                      <div className="product-item-name">{item.title}</div>
-                      <div className="product-item-company">{item.company}</div>
-                    </div>
-                  </div>
-                </a>
-              ))}
-            </div>
+            {/*  */}
+            <ProdDisp subcategory={subcategory} />
           </div>
         ))}
       </div>
+    </div>
+  );
+}
+
+function ProdDisp({ subcategory }) {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    async function fetchData(subcategory) {
+      const querySnapshot = await getDocs(collection(db, subcategory));
+      const docs = querySnapshot.docs;
+      let arr = [];
+      let index = 0;
+      for (let doc of docs) {
+        arr[index] = doc.data();
+        arr[index].id = doc.id;
+        index++;
+      }
+      setProducts(arr);
+    }
+    (async () => {
+      await fetchData(subcategory);
+      setLoading(false);
+    })();
+  }, [subcategory]);
+  if (loading) {
+    return <Loader />;
+  }
+  return (
+    <div className="product-category-display">
+      {products.map((item) => (
+        <a
+          key={item.id}
+          className="product-item-brochure"
+          href={item.brochureUrl}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <div
+            style={{ backgroundImage: `url(${item.imgUrl})` }}
+            className="product-item"
+          >
+            <div className="product-item-info">
+              <div className="product-item-name">{item.title}</div>
+              <div className="product-item-company">{item.company}</div>
+            </div>
+          </div>
+        </a>
+      ))}
     </div>
   );
 }
