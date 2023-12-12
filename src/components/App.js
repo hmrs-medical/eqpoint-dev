@@ -6,28 +6,6 @@ import Products from "./pages/Products";
 import Contact from "./pages/Contact";
 
 function App() {
-  // useEffect(() => {
-  //   async function fetchData(element) {
-  //     const querySnapshot = await getDocs(collection(db, element));
-  //     const docs = querySnapshot.docs;
-  //     let arr = [];
-  //     let index = 0;
-  //     for (let doc of docs) {
-  //       arr[index] = doc.data();
-  //       arr[index].id = doc.id;
-  //       index++;
-  //     }
-
-  //     return arr;
-  //   }
-  //   function getData() {
-  //     prodSubCategory.forEach(async (subcategory) => {
-  //       const arr = await fetchData(subcategory);
-  //       products[subcategory] = [...arr];
-  //     });
-  //   }
-  //   getData();
-  // }, []);
   return (
     <BrowserRouter>
       <Navbar />
@@ -52,7 +30,6 @@ function App() {
         />
         <Route path="contact" element={<Contact />} />
       </Routes>
-      {/* <Footer /> */}
     </BrowserRouter>
   );
 }

@@ -1,32 +1,21 @@
-import Navbar from "../Navbar";
 import "../../assets/css/contact.css";
+
 function Contact() {
   return (
     <div>
-      <Navbar />
       <div className="contact-display">
-        <h1 className="subheading">
+        <h1 className="heading">
           Feel free to reach us with any queries you might have
         </h1>
         <div className="contact-info">
-          <div className="addresses">
-            <p
-              className="subtext"
-              style={{
-                width: "80%",
-                margin: "auto",
-                alignSelf: "center",
-                fontSize: "1.2rem",
-              }}
-            >
-              <b>EMAIL:</b> xyzxyz@hmrs.co.in
-              <br />
-              Our head office is located at: <br /> PLOT NUMBER - 47 CSC 9
-              SECTOR 7, ROHINI DELHI 110085, INDIA
-              <br />
-              <b>PHONE:</b> +91 11 65470843 <br />
-              <b>FAX:</b> +91 11 27062764 <br />
-            </p>
+          <div className="address">
+            <b>EMAIL:</b> xyzxyz@hmrs.co.in
+            <br />
+            Our head office is located at: <br /> PLOT NUMBER - 47 CSC 9 SECTOR
+            7, ROHINI DELHI 110085, INDIA
+            <br />
+            <b>PHONE:</b> +91 11 65470843 <br />
+            <b>FAX:</b> +91 11 27062764 <br />
           </div>
           <div className="map-display">
             <iframe

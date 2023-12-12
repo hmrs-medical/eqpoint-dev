@@ -80,7 +80,7 @@ function Home() {
             <div className="company-item">
               <img
                 alt="terumo-logo"
-                src="http://localhost:3000/termo.png"
+                src="termo.png"
                 height="120%"
                 width="100%"
               />
@@ -88,7 +88,7 @@ function Home() {
             <div className="company-item">
               <img
                 alt="terumo-logo"
-                src="http://localhost:3000/thermo.png"
+                src="thermo.png"
                 height="100%"
                 width="100%"
               />
@@ -96,7 +96,7 @@ function Home() {
             <div className="company-item">
               <img
                 alt="terumo-logo"
-                src="http://localhost:3000/ortho.png"
+                src="ortho.png"
                 height="100%"
                 width="100%"
               />
@@ -104,7 +104,7 @@ function Home() {
             <div className="company-item">
               <img
                 alt="terumo-logo"
-                src="http://localhost:3000/optics.png"
+                src="optics.png"
                 height="130%"
                 width="100%"
               />
@@ -112,7 +112,7 @@ function Home() {
             <div className="company-item">
               <img
                 alt="terumo-logo"
-                src="http://localhost:3000/lisaline.png"
+                src="lisaline.png"
                 height="100%"
                 width="100%"
               />
@@ -188,14 +188,10 @@ function Home() {
             <h2 className="subheading">Testimonials</h2>
             <div className="testimonials-display">
               <div className="testimonial-left">
-                <a
-                  href="http://localhost:3000/Fortis_PC.jpeg"
-                  rel="noreferrer"
-                  target="_blank"
-                >
+                <a href="Fortis_PC.jpeg" rel="noreferrer" target="_blank">
                   <img
                     alt="Fortis hospital performance certificate"
-                    src="http://localhost:3000/Fortis_PC.jpeg"
+                    src="Fortis_PC.jpeg"
                     height="100%"
                     width="100%"
                   />
@@ -204,27 +200,23 @@ function Home() {
               <div className="testimonial-right">
                 <div>
                   <a
-                    href="http://localhost:3000/Rajivgandhi_PC.jpeg"
+                    href="Rajivgandhi_PC.jpeg"
                     rel="noreferrer"
                     target="_blank"
                   >
                     <img
                       alt="Rajiv Gandhi hospital performance certificate"
-                      src="http://localhost:3000/Rajivgandhi_PC.jpeg"
+                      src="Rajivgandhi_PC.jpeg"
                       height="100%"
                       width="100%"
                     />
                   </a>
                 </div>
                 <div>
-                  <a
-                    href="http://localhost:3000/BLK_PC.jpeg"
-                    rel="noreferrer"
-                    target="_blank"
-                  >
+                  <a href="BLK_PC.jpeg" rel="noreferrer" target="_blank">
                     <img
                       alt="BLK Max hospital performance certificate"
-                      src="http://localhost:3000/BLK_PC.jpeg"
+                      src="BLK_PC.jpeg"
                       height="100%"
                       width="100%"
                     />

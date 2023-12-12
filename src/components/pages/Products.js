@@ -1,4 +1,3 @@
-import Navbar from "../Navbar";
 import "../../assets/css/product.css";
 import { useEffect, useState } from "react";
 import { prodCategory } from "../config_flies/products";
@@ -18,7 +17,6 @@ function Products(props) {
   }, [props.category, props.minimize]);
   return (
     <div className="root">
-      <Navbar />
       <div
         className={
           !isExpanded ? "product-categories minimize" : "product-categories"
@@ -85,7 +83,6 @@ function Products(props) {
         {categories.map((subcategory) => (
           <div className="product-category">
             <h2 className="product-subcategory">{subcategory}</h2>
-            {/*  */}
             <ProdDisp subcategory={subcategory} />
           </div>
         ))}

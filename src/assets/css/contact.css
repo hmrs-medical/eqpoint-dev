@@ -1,16 +1,17 @@
-.subheading {
+.heading {
   font-size: 2rem;
   text-align: center;
   font-family: sans-serif;
   color: #3b436e;
 }
-.subtext {
+.address {
   color: rgb(84, 84, 84);
-  text-align: justify;
-  width: 95%;
+  width: 80%;
   margin: auto;
+  align-self: center;
+  font-size: 1.2rem;
+  padding: 1%;
 }
-
 .contact-display {
   margin-top: 10vh;
   display: flex;
