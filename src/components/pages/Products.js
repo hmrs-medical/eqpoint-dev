@@ -24,7 +24,7 @@ function Products(props) {
       >
         <div
           id="bloodbank"
-          style={{ backgroundImage: 'url("bloodwall.jpeg")' }}
+          style={{ backgroundImage: 'url("/bloodwall.jpeg")' }}
           onClick={() => {
             setCategories(prodCategory.bloodbank);
             if (isExpanded) {
@@ -39,7 +39,7 @@ function Products(props) {
         </div>
         <div
           id="laboratory"
-          style={{ backgroundImage: 'url("img2.jpeg")' }}
+          style={{ backgroundImage: 'url("/img2.jpeg")' }}
           onClick={() => {
             setCategories(prodCategory.laboratory);
             if (isExpanded) {
@@ -54,7 +54,7 @@ function Products(props) {
         </div>
         <div
           id="research"
-          style={{ backgroundImage: 'url("img3.jpeg")' }}
+          style={{ backgroundImage: 'url("/img3.jpeg")' }}
           onClick={() => {
             setCategories(prodCategory.research);
             if (isExpanded) {
@@ -69,7 +69,7 @@ function Products(props) {
         </div>
         <div
           id="coldchain"
-          style={{ backgroundImage: 'url("img4.jpeg")' }}
+          style={{ backgroundImage: 'url("/img4.jpeg")' }}
           onClick={() => {
             setCategories(prodCategory.coldchain);
             if (isExpanded) {
