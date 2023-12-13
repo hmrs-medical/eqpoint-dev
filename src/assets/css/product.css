@@ -1,5 +1,6 @@
 .root {
   font-family: sans-serif;
+  margin-bottom: 50vh;
 }
 .product-categories {
   position: absolute;
@@ -50,13 +51,14 @@
 }
 .products-display {
   position: relative;
-  top: 40vh;
+  top: 45vh;
   display: flex;
   flex-direction: column;
   width: 90%;
   padding: 2%;
   margin: auto;
   height: auto;
+  background-color: rgb(243, 243, 243);
 }
 .product-category {
   height: fit-content;
@@ -89,18 +91,24 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  background-color: white;
+}
+.product-item:hover {
+  z-index: 3;
+  transform: scale(1.08);
 }
 .product-item-info {
   display: flex;
   justify-content: space-between;
   position: absolute;
   width: inherit;
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(20px);
   align-items: center;
   bottom: 2%;
   flex-wrap: wrap;
   word-wrap: normal;
 }
+
 .product-item-name {
   color: rgb(26, 95, 53);
   align-self: flex-start;
@@ -126,7 +134,8 @@
 }
 @media screen and (max-width: 800px) {
   .product-categories {
-    overflow: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
     width: 100%;
     flex-direction: column;
   }
