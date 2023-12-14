@@ -30,6 +30,7 @@
   /* border-radius: 10px; */
   margin-bottom: 3%;
   border: 1px solid #3a8a4d;
+  background-color: transparent;
 }
 .query-form input[type="text"] {
   width: 40%;

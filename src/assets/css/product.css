@@ -67,14 +67,15 @@
   padding: 0 1%;
 }
 .product-category-display {
-  display: flex;
+  display: inline-flex;
   width: 100%;
-  flex-wrap: wrap;
+  flex-wrap: wrap ;
 }
 .product-category-display > * {
   width: 12%;
   height: 20vh;
   margin: 0.8vw;
+  margin-bottom: 2vh;
 }
 .product-subcategory {
   color: #3b436e;
@@ -84,7 +85,6 @@
   width: 100%;
   position: relative;
   animation: slide-and-fade 0.5s ease-in-out;
-  margin: 0.8vw;
   box-shadow: 0 0 1px green;
   align-items: center;
   cursor: pointer;
@@ -155,7 +155,7 @@
   .product-category-display > * {
     width: 20%;
     height: 20vh;
-    margin: 1vw;
+    margin-bottom: 4vh;
   }
 }
 
@@ -166,8 +166,9 @@
   .product-category-display > * {
     width: 40%;
     height: 20vh;
-    margin: 1vw;
+    margin-bottom: 4vh;
   }
+
 }
 
 /* Animations */

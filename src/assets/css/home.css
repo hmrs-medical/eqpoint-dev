@@ -19,6 +19,7 @@ section:nth-child(2n) {
   text-align: center;
   font-family: sans-serif;
   color: #3b436e;
+  margin: 2vh auto 0.5vh auto;
 }
 .subtext {
   color: rgb(84, 84, 84);

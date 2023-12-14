@@ -169,12 +169,7 @@ function Home() {
               <br />
               <b>PHONE:</b> +91 11 65470843 <br />
               <b>FAX:</b> +91 11 27062764 <br />
-              <b>TIN:</b> 07360290789 <br />
-              <b>C.S.T NO:</b> 07360290789
-              <br />
-              <b>IEC NO:</b> 0505075440 <br />
-              <b>D.L.NO:</b> 31(1377) 20B, 31(1377) 21B AND
-              <br />
+              <b>MOBILE:</b> 09310261718 <br />
             </div>
           </div>
         </div>
