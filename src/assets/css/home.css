@@ -59,6 +59,9 @@ section:nth-child(2n) {
 .cards-container > * {
   width: 26%;
 }
+.cards-container .card-data {
+  text-align: justify;
+}
 .companies {
   display: flex;
   justify-content: space-between;
