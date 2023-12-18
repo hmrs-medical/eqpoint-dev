@@ -5,7 +5,7 @@ section:nth-child(2n) {
   background-color: rgb(243, 243, 243);
   width: 95%;
   margin: auto;
-  padding: 0.5%;
+  padding: 1%;
   margin: 1% auto;
 }
 .section-heading {
@@ -47,16 +47,17 @@ section:nth-child(2n) {
   animation-timing-function: ease-in-out;
   margin-top: 4vh;
 }
-.office-display {
-  height: 50vh;
-  display: flex;
-  justify-content: space-between;
-  padding: 1%;
-  width: 100%;
+#about-display {
+  padding-bottom: 1%;
 }
-.office-display div {
-  margin: auto 3%;
-  width: 50%;
+.cards-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 1%;
+}
+.cards-container > * {
+  width: 26%;
 }
 .companies {
   display: flex;
@@ -125,6 +126,23 @@ section:nth-child(2n) {
   align-self: center;
 }
 /* Media queries */
+@media screen and (max-width: 1200px) {
+  .cards-container > * {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .cards-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    padding: 1%;
+  }
+  .cards-container > * {
+    width: 50%;
+  }
+}
 
 @media screen and (max-width: 600px) {
   #intro {
@@ -147,7 +165,6 @@ section:nth-child(2n) {
   .subtext {
     font-size: 0.8rem;
   }
-
   .company-item {
     padding: 1%;
     margin: 1% auto;
@@ -155,22 +172,20 @@ section:nth-child(2n) {
     height: 5vh;
     min-width: 100px;
   }
-  .office-display {
-    flex-direction: column;
-  }
-  .office-display iframe {
-    height: 50%;
-    width: 100%;
-  }
-  .office-display div {
-    margin: auto;
-    width: 95%;
-  }
   .clientel-display {
     flex-direction: column-reverse;
   }
   .clientel-display > * {
     width: 98%;
+  }
+  .cards-container > * {
+    width: 80%;
+  }
+  .cards-container .card-data {
+    font-size: 0.8rem;
+  }
+  .cards-container .card-button {
+    font-size: 0.5rem;
   }
 }
 

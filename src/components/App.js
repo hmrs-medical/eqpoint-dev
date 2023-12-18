@@ -1,6 +1,6 @@
 import Navbar from "./Navbar";
 import Home from "./pages/home";
-import Footer from "./footer";
+// import Footer from "./footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Products from "./pages/Products";
 import Contact from "./pages/Contact";
@@ -30,7 +30,7 @@ function App() {
         />
         <Route path="contact" element={<Contact />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   );
 }

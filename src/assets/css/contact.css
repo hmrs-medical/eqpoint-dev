@@ -1,21 +1,19 @@
 .query-display {
-  background-color: rgb(233, 233, 233);
-  width: 50%;
-  margin: 3% auto 1% auto;
-  box-shadow: 0 0 6px 0.5px grey;
-  /* border-radius: 10px; */
+  background-color: transparent;
+  backdrop-filter: blur(2px);
+  width: 40%;
+  margin: 2%;
+  padding: 2%;
 }
 .heading {
   font-size: 2rem;
-  text-align: center;
-  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   color: #3b436e;
 }
 .query-form {
   display: flex;
   flex-direction: column;
   width: 90%;
-  margin: auto;
   justify-content: center;
 }
 .query-form label {
@@ -26,17 +24,15 @@
   color: #3a8a4d;
   font-size: 1.2rem;
   width: 20%;
+  min-width: 100px;
   height: 4.5vh;
-  /* border-radius: 10px; */
   margin-bottom: 3%;
   border: 1px solid #3a8a4d;
-  background-color: transparent;
 }
 .query-form input[type="text"] {
   width: 40%;
   height: 2vh;
   margin-bottom: 1%;
-  /* border-radius: 5px; */
   border: 1px solid black;
 }
 .query-form textarea {
@@ -46,14 +42,6 @@
   font-size: 1.3rem;
   /* border-radius: 10px; */
 }
-.address {
-  color: rgb(84, 84, 84);
-  width: 80%;
-  margin: auto;
-  align-self: center;
-  font-size: 1.2rem;
-  padding: 1%;
-}
 .contact-display {
   margin-top: 10vh;
   display: flex;
@@ -62,14 +50,36 @@
 
 .contact-info {
   display: flex;
+  margin: auto;
+  width: 90%;
 }
 
 .contact-info > div {
   width: 50%;
   padding: 2%;
-  height: 30vh;
+  /* height: 30vh; */
 }
-
+.address-card {
+  display: flex;
+  width: 40vw;
+  height: 7vh;
+  margin: 0.5vh;
+  padding: 0.5%;
+  align-items: center;
+}
+.address-card .left-box {
+  width: 8%;
+}
+.address-card .right-box {
+  width: 92%;
+  padding: 1% 2%;
+  color: #3b436e;
+  font-size: 1.1rem;
+}
+.map-display {
+  display: flex;
+  justify-content: center;
+}
 ::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
   font-size: 1.2rem;
@@ -93,21 +103,18 @@
 
 @media screen and (max-width: 600px) {
   .query-display {
-    width: 95%;
+    width: 90%;
   }
   .heading {
-    font-size: 1.2rem;
-  }
-  .query-form {
-    width: 100%;
-    padding: 1%;
+    font-size: 1 rem;
   }
   .contact-info {
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+  }
+  .contact-info > div {
     width: 100%;
   }
-  .contact-display * {
-    min-width: 90%;
+  .address-card {
+    width: 100%;
   }
 }

@@ -1,5 +1,6 @@
 import "../../assets/css/home.css";
 import Slider from "../slider";
+import { useState } from "react";
 
 function Home() {
   const viewPCert = function () {
@@ -37,44 +38,62 @@ function Home() {
             and offer solutions to fullfill those needs. We strive to provide
             best services with promt response.
           </div>
-          <h2 className="subheading">Vision</h2>
-          <div className="subtext">
-            To emerge as a leader in the delivery of high quality products at an
-            affordable price by offering wide range of products backed by a
-            dedicated team of sales & service engineers ensuring best in class
-            services.
+          <div className="cards-container">
+            <PointerCard
+              tagline={`"To emerge as a leader in the delivery of high quality products at an
+              affordable price by offering wide range of products"`}
+              displayPic={"/vision.jpg"}
+              expand={false}
+            />
+            <PointerCard
+              tagline={`"Quality, trust, compassion and ethics: the pillars of our profession and values we strive to foster in our team and organization."`}
+              displayPic={"/values.png"}
+              expand={true}
+              data={
+                <ul>
+                  <li>
+                    To provide best quality international products & services
+                    with customer first approach.
+                  </li>
+                  <li>
+                    Hold firmly on to the quality & ethical values of the noble
+                    profession.
+                  </li>
+                  <li>
+                    To be seen as a trustworthy and reliable source of highest
+                    quality equipments aiming to win the trust of customers.
+                  </li>
+                  <li>
+                    Provide assistance to the underprivileged, especially
+                    towards their education, as a part of corporate social
+                    responsibility in accomplising compassionate mission.
+                  </li>
+                </ul>
+              }
+            />
+
+            <PointerCard
+              tagline={`"We provide solutions for transfusion medicine, hematology, diagnostic oncology and blood bank management"`}
+              displayPic={"/focus.jpg"}
+              expand={true}
+              data={
+                <ul>
+                  <li>Transfusion medicine</li>
+                  <li>Hematology with special focus on BMT and Thallesemia</li>
+                  <li>
+                    Diagnostic oncology & research equipments & solutions
+                    designing blood bank as per regulatory requirement
+                  </li>
+                  <li>
+                    Stand-alone laboratories & hospital based laboratories
+                  </li>
+                  <li>
+                    Turn key blood bank projects with best quality equipments
+                  </li>
+                </ul>
+              }
+            />
           </div>
-          <h2 className="subheading">Core Values</h2>
-          <ul className="subtext bullets">
-            <li>
-              To provide best quality international products & services with
-              customer first approach.
-            </li>
-            <li>
-              Hold firmly on to the quality & ethical values of the noble
-              profession.
-            </li>
-            <li>
-              To be seen as a trustworthy and reliable source of highest quality
-              equipments aiming to win the trust of customers.
-            </li>
-            <li>
-              Provide assistance to the underprivileged, especially towards
-              their education, as a part of corporate social responsibility in
-              accomplising compassionate mission.
-            </li>
-          </ul>
-          <h2 className="subheading">Focus Areas</h2>
-          <ul className="subtext bullets">
-            <li>Transfusion medicine</li>
-            <li>Hematology with special focus on BMT and Thallesemia</li>
-            <li>
-              Diagnostic oncology & research equipments & solutions designing
-              blood bank as per regulatory requirement
-            </li>
-            <li>Stand-alone laboratories & hospital based laboratories</li>
-            <li>Turn key blood bank projects with best quality equipments</li>
-          </ul>
           <h2 className="subheading">Principal Companies</h2>
           <div className="companies">
             <div className="company-item">
@@ -147,30 +166,6 @@ function Home() {
           <div className="subtext">
             Pan India through channel partners with a focus on Delhi and NCR,
             Uttar Pradesh, Rajasthan & Uttarakhand, Punjab, Haryana.{" "}
-          </div>
-          <h2 className="subheading">Our Office</h2>
-          <div className="office-display">
-            <iframe
-              title="google map office location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.430815303244!2d77.10946547614591!3d28.706668380708834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0157b90bf289%3A0x86dc0d6eae2e7732!2sEquipment%20Point!5e0!3m2!1sen!2sin!4v1697293785094!5m2!1sen!2sin"
-              width="50%"
-              height="90%"
-              style={{
-                border: "0",
-                borderRadius: "10px",
-                marginLeft: "1vw",
-                alignSelf: "center",
-              }}
-              loading="lazy"
-            ></iframe>
-            <div className="subtext">
-              Our head office is located at: <br /> PLOT NUMBER - 47 CSC 9
-              SECTOR 7, ROHINI DELHI 110085, INDIA
-              <br />
-              <b>PHONE:</b> +91 11 65470843 <br />
-              <b>FAX:</b> +91 11 27062764 <br />
-              <b>MOBILE:</b> 09310261718 <br />
-            </div>
           </div>
         </div>
       </section>
@@ -252,6 +247,105 @@ function Home() {
           </div>
         </div>
       </section>
+    </div>
+  );
+}
+
+function PointerCard({ displayPic, tagline, data, expand }) {
+  const cardStyle = {
+    display: "flex",
+    flexDirection: "column",
+    boxShadow: "0 0 1px 0 black",
+    margin: "2vh",
+    padding: "0.3% 0.3% 0.5% ",
+    backgroundColor: "white",
+    borderRadius: "7px",
+    borderTopRightRadius: "7px",
+    borderTopLeftRadius: "7px",
+    height: "45vh",
+  };
+  const imgStyle = {
+    height: "80%",
+    width: "100%",
+    borderTopRightRadius: "7px",
+    borderTopLeftRadius: "7px",
+    backgroundImage: `url(${displayPic})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  };
+  const dataStyle = {
+    minHeight: "20%",
+    display: "flex",
+    justifyContent: "space-between",
+    flexDirection: "column",
+    fontSize: "1rem",
+    fontFamily: "ariel",
+    padding: "2% 2%",
+    fontWeight: "570",
+    color: "#444b71",
+  };
+  const bulletStyle = {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    height: "100%",
+    padding: "2%",
+    fontFamily: "ariel",
+    borderRadius: "7px",
+    fontSize: "1.2rem",
+    backgroundColor: "#444b71",
+    color: "white",
+  };
+  const buttonStyle = {
+    width: "30%",
+    height: "2.5vh",
+    borderRadius: "5px",
+    marginLeft: "1%",
+    border: "none",
+    boxShadow: "0 0 3px 0 green",
+    fontWeight: "500",
+  };
+  const [cardData, setCardData] = useState(tagline);
+  const [expandCard, setExpandCard] = useState(false);
+  return (
+    <div style={cardStyle}>
+      {expandCard ? (
+        <div style={bulletStyle}>
+          <div className="card-data">{cardData}</div>
+          <button
+            className="card-button"
+            style={buttonStyle}
+            onClick={() => {
+              setExpandCard(false);
+              setCardData(tagline);
+            }}
+          >
+            See Less
+          </button>
+        </div>
+      ) : (
+        <>
+          <div style={imgStyle}></div>
+          <div style={dataStyle}>
+            <div className="card-data">{cardData}</div>
+
+            {expand ? (
+              <button
+                className="card-button"
+                style={buttonStyle}
+                onClick={() => {
+                  setExpandCard(true);
+                  setCardData(data);
+                }}
+              >
+                See More
+              </button>
+            ) : (
+              ""
+            )}
+          </div>
+        </>
+      )}
     </div>
   );
 }

@@ -3,21 +3,62 @@ import "../../assets/css/contact.css";
 
 function Contact() {
   const [submitted, setSubmitted] = useState(false);
-  function handleSubmit() {
+  function handleSubmit(e) {
+    e.preventDefault();
     setSubmitted(true);
   }
   return (
     <div className="root">
       <div className="contact-display">
+        <section
+          style={{
+            backgroundImage: "url(/reachout.jpg)",
+            backgroundSize: "contain",
+            backgroundPosition: "right",
+            backgroundRepeat: "no-repeat",
+            backgroundColor: "#a1d4dc",
+            height: "70vh",
+          }}
+        >
+          <div className="query-display">
+            {submitted ? (
+              <h3 style={{ color: "#3a8a4d", padding: "1%" }}>
+                We have recieved your query and we appreciate you taking the
+                step to reach out to us. Our team will get back to you on your
+                submitted mail ID as soon as possible. Thankyou for being
+                patient.
+              </h3>
+            ) : (
+              <>
+                <h1 className="heading">Hi! How can we help you?</h1>
+                <form
+                  method="post"
+                  onSubmit={handleSubmit}
+                  className="query-form"
+                >
+                  <label for="email">Your Email:</label>
+                  <input name="email" type="text" />
+                  <label for="subject">Subject:</label>
+                  <input name="subject" type="text" />
+                  <textarea name="body" placeholder="Your query" />
+                  <button type="submit">Submit</button>
+                </form>
+              </>
+            )}
+          </div>
+        </section>
+
         <div className="contact-info">
           <div className="address">
-            <b>EMAIL:</b> xyzxyz@hmrs.co.in
-            <br />
-            Our head office is located at: <br /> PLOT NUMBER - 47 CSC 9 SECTOR
-            7, ROHINI DELHI 110085, INDIA
-            <br />
-            <b>PHONE:</b> +91 11 65470843 <br />
-            <b>FAX:</b> +91 11 27062764 <br />
+            <AddressCard img={"/email.png"} data={"info@equipmentpoint.in"} />
+            <AddressCard
+              img={"/address.png"}
+              data={
+                "PLOT NUMBER - 47 CSC 9, Sector-7 Rohini , Delhi - 110085, India"
+              }
+            />
+            <AddressCard img={"/phone.png"} data={"+91 11 65470843"} />
+            <AddressCard img={"/fax.png"} data={"+91 11 27062764"} />
           </div>
           <div className="map-display">
             <iframe
@@ -33,34 +74,18 @@ function Contact() {
             ></iframe>
           </div>
         </div>
-        <div className="query-display">
-          {submitted ? (
-            <h3 style={{ color: "#3a8a4d", padding: "1%" }}>
-              We have recieved your query and we appreciate you taking the step
-              to reach out to us. Our team will get back to you on your
-              submitted mail ID as soon as possible. Thankyou for being patient.
-            </h3>
-          ) : (
-            <>
-              <h1 className="heading">
-                Feel free to reach us with any queries you might have
-              </h1>
-              <form
-                method="post"
-                onSubmit={handleSubmit}
-                className="query-form"
-              >
-                <label for="email">Your Email:</label>
-                <input name="email" type="text" />
-                <label for="subject">Subject:</label>
-                <input name="subject" type="text" />
-                <textarea name="body" placeholder="Your query" />
-                <button type="submit">Submit</button>
-              </form>
-            </>
-          )}
-        </div>
       </div>
+    </div>
+  );
+}
+
+function AddressCard({ img, data }) {
+  return (
+    <div className="address-card">
+      <div className="left-box">
+        <img alt="address icon" height={"100%"} width="100%" src={img} />
+      </div>
+      <div className="right-box">{data}</div>
     </div>
   );
 }
