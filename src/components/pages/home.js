@@ -311,7 +311,9 @@ function PointerCard({ displayPic, tagline, data, expand }) {
     <div style={cardStyle}>
       {expandCard ? (
         <div style={bulletStyle}>
-          <div className="card-data">{cardData}</div>
+          <div className="card-data" style={{ textAlign: "left" }}>
+            {cardData}
+          </div>
           <button
             className="card-button"
             style={buttonStyle}
