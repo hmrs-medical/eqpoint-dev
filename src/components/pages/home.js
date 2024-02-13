@@ -219,26 +219,44 @@ function Home() {
             <h2 className="subheading">Our major customers</h2>
             <div className="subtext major-clients-display">
               <ul>
-                <li>Armed forces</li>
-                <li>Fortis group hospitals</li>
-                <li>Max group hospitals</li>
-                <li>Rajiv Gandhi cancer institute & research centre</li>
-                <li>Delhi heart & lung institute</li>
-                <li>Jaipur golden hospital</li>
-                <li>Rotary blood bank</li>
-                <li>Cryo banks international</li>
-                <li>Delhi govt. equipment procurement cell</li>
+                <li>Aakash Healthcare Pvt Ltd</li>
+                <li>Armed Forces Transfusion Centre</li>
+                <li>AIIMS Rishikesh</li>
+                <li>BL Kapoor Max Hospital</li>
+                <li>Crosslay Max Hospital</li>
+                <li>DDU Hospital</li>
+                <li>Delhi Govt. Hospitals</li>
+                <li>Delhi Heart & Lung Institute</li>
+                <li>Escorts Heart Institute</li>
                 <li>ESI hospital</li>
-                <li>Maharaja agrasen hospital</li>
-                <li>HIHT & medical college dehradun</li>
-                <li>Subharti medical college & Hospital</li>
-                <li>Susheela tiwari hospital Haldwani</li>
-                <li>JLN medical college</li>
-                <li>AMU aligarh</li>
-                <li>Panacea biotech</li>
-                <li>CCRUM ministry of health</li>
-                <li>Central soil research station</li>
-                <li>Central govt. etc.</li>
+                <li>Fortis Group of Hospitals</li>
+                <li>Graphic Era Institute of Medical Sciences Dehradun</li>
+
+                <li>HIHT Swami Rama Himalayan University & Hospital Dehradun</li>
+
+                <li>IMA BloodBank of U.K.</li>
+                <li>Indian Spinal Injuries Centre Delhi</li>
+                <li>Institute of Liver and Biliar Delhi</li>
+                <li>Jaipur Golden Hospital</li>
+                <li>JLN Medical College and Hospital AMU Aligarh</li>
+                <li>Lions Blood Bank</li>
+                <li>Manipal Hospital</li>
+                <li>Max Group of Hospitals</li>
+                <li>PGI Rohtak</li>
+                <li>Rajiv Gandhi cancer institute & research centre</li>
+                
+                
+                
+                <li>Shree Aggarsain International Hospital Rohini</li>
+                <li>Shri Mahant Indiresh Hospital</li>
+                <li>Sir Ganga Ram Hospital</li>
+                <li>Shri Balaji Action Medical Hospital INS Delhi</li>
+                <li>Subharti Medical College & Hospital</li>
+                <li>Susheela Tiwari GMCH Haldwani</li>
+                <li>Venkateshwar Hospital</li>
+                <li>Yashoda Super Speciality Hospital U.P.</li>
+                
+                
               </ul>
               <button id="performance-cert-btn" onClick={viewPCert}>
                 View Performance Certificates
@@ -255,7 +273,7 @@ function PointerCard({ displayPic, tagline, data, expand }) {
   const cardStyle = {
     display: "flex",
     flexDirection: "column",
-    boxShadow: "0 0 1px 0 black",
+    // boxShadow: "0 0 1px 0 black",
     margin: "2vh",
     padding: "0.3% 0.3% 0.5% ",
     backgroundColor: "white",
@@ -300,6 +318,7 @@ function PointerCard({ displayPic, tagline, data, expand }) {
     width: "30%",
     height: "2.5vh",
     borderRadius: "5px",
+    marginTop:"1%",
     marginLeft: "1%",
     border: "none",
     boxShadow: "0 0 3px 0 green",

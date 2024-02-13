@@ -86,7 +86,7 @@ section:nth-child(2n) {
 }
 .testimonials-display {
   display: flex;
-  height: 50vh;
+  height: 70vh;
   justify-content: center;
 }
 .testimonials-display > * {
@@ -190,6 +190,10 @@ section:nth-child(2n) {
   .cards-container .card-button {
     font-size: 0.5rem;
   }
+  .testimonials-display{
+    height: 45vh;
+  }
+  
 }
 
 /* Animations */

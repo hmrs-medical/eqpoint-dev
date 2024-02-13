@@ -1,10 +1,23 @@
 import { useState } from "react";
 import "../../assets/css/contact.css";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 
 function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const contactForm = useRef();
+
   function handleSubmit(e) {
     e.preventDefault();
+    emailjs.sendForm('contactus_info_eqpoint','template_qasmfrq',contactForm.current , {
+      publicKey: 'c02txeSZ6gLsVpROm'
+    }).then(() => {
+      console.log('SUCCESS!');
+    },
+    (error) => {
+      console.log('FAILED...', error.text);
+    },
+    );
     setSubmitted(true);
   }
   return (
@@ -35,12 +48,13 @@ function Contact() {
                   method="post"
                   onSubmit={handleSubmit}
                   className="query-form"
+                  ref={contactForm}
                 >
-                  <label for="email">Your Email:</label>
-                  <input name="email" type="text" />
-                  <label for="subject">Subject:</label>
-                  <input name="subject" type="text" />
-                  <textarea name="body" placeholder="Your query" />
+                  <label htmlFor="email">Your Email:</label>
+                  <input id="email" name="from_email" type="text" />
+                  <label htmlFor="subject">Subject:</label>
+                  <input id="subject" name="subject" type="text" />
+                  <textarea name="message" placeholder="Your query" />
                   <button type="submit">Submit</button>
                 </form>
               </>
