@@ -71,7 +71,7 @@ function Contact() {
                 "PLOT NUMBER - 47 CSC 9, Sector-7 Rohini , Delhi - 110085, India"
               }
             />
-            <AddressCard img={"/phone.png"} data={"+91 11 65470843"} />
+            <AddressCard img={"/phone.png"} data={"+91 11 27057988"} />
             <AddressCard img={"/fax.png"} data={"+91 11 27062764"} />
           </div>
           <div className="map-display">

@@ -14,7 +14,7 @@ function Slider(props) {
     const interval = setInterval(() => {
       const isLast = index === numSlides - 1;
       setIndex(isLast ? 0 : index + 1);
-    }, 6000);
+    }, 8000);
     return () => {
       clearInterval(interval);
     };

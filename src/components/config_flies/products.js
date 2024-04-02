@@ -5,5 +5,5 @@ export const prodCategory = {
     "Immunohematology",
   ],
   research: ["Laboratory and Storage equipments", "Sterile Connecting Devices"],
-  coldchain: ["Active and Passive cooling transportation", "Data loggers"],
+  coldchain: ["Active and Passive cooling transportation", "Data loggers","Temperature Indicators"],
 };

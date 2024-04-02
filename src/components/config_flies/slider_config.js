@@ -1,7 +1,7 @@
 export const sliderData = [
   {
     href: "products/bloodbank",
-    imgUrl: "img1.jpeg",
+    imgUrl: "bloodbank.jpg",
     heading: "Blood bank Equipments/Consumables",
     content:
       "We are a leading supplier of quality products for blood collection, screening, storage, and transfusion. Whether you need donor cards, Hb devices, EDTA tubes, sterilizing trays, or any other item from our comprehensive list, we have it all at affordable prices and fast delivery.",
